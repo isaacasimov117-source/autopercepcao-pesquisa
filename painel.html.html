@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Percepção · Painel do responsável</title><style>:root{--bg:#f6f5f0;--paper:#fffefa;--ink:#263a38;--muted:#576b68;--green:#315d56;--green-soft:#e9efeb;--line:#d7dfd9;--ochre:#ac7133;--danger:#a33733;--radius:20px;--shadow:0 5px 22px #273a3510;font-size:18px;color-scheme:light}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}html.large-text{font-size:21px}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:var(--green);text-underline-offset:4px}a:hover{color:#1a453f}button:disabled{opacity:.5;cursor:not-allowed}input,select{max-width:100%}input[type=radio],input[type=checkbox]{accent-color:var(--green);width:1.15rem;height:1.15rem;flex:none}input[type=text],select{display:block;width:100%;padding:.65rem .8rem;border:1px solid #9dafaa;border-radius:10px;background:var(--paper);color:var(--ink);min-height:48px}input[type=text]:focus,select:focus{border-color:var(--green)}:focus-visible{outline:3px solid #b17437;outline-offset:4px}[hidden]{display:none!important}h1,h2,h3,p,figure{margin-top:0}h1,h2,h3{font-weight:650;line-height:1.2;letter-spacing:-.035em}h1{font-size:clamp(2.2rem,4.8vw,3.8rem);margin-bottom:1.2rem}h2{font-size:1.65rem;margin-bottom:.8rem}h3{font-size:1.25rem;margin-bottom:.65rem}p{margin-bottom:1rem}em{color:var(--green);font-family:Georgia,serif;font-weight:400}small,.fine{font-size:.81rem;line-height:1.55;color:var(--muted)}.fine:last-child{margin-bottom:0}.lead{font-size:1.13rem;line-height:1.7;max-width:44rem}.wrap{width:min(1220px,calc(100% - 64px));margin:auto}.skip{position:absolute;left:1rem;top:-8rem;background:var(--paper);padding:.6rem;z-index:10}.skip:focus{top:1rem}.top{border-bottom:1px solid var(--line)}.top-inner{display:flex;align-items:center;gap:2rem;min-height:100px}.brand{display:flex;gap:.65rem;align-items:center;color:var(--ink);text-decoration:none;font-size:1.45rem;font-weight:650;letter-spacing:-.06em}.brand small{display:block;font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500;margin-top:1px}.brand-mark{display:flex;align-items:center;gap:4px;width:34px;height:35px;transform:rotate(-12deg)}.brand-mark i{display:block;width:7px;border-radius:4px;background:var(--green);height:15px}.brand-mark i:nth-child(2){height:28px;background:#7b998d}.brand-mark i:nth-child(3){height:21px;background:#b98346}nav{margin-left:auto;display:flex;gap:1.3rem;align-items:center;flex-wrap:wrap}nav a{text-decoration:none;white-space:nowrap;font-size:.85rem;padding:.35rem 0;color:var(--muted)}nav a[aria-current=page]{color:var(--ink);box-shadow:0 2px 0 var(--green);font-weight:650}.font-button{background:transparent;border:1px solid var(--line);border-radius:9px;min-width:44px;min-height:44px;padding:.3rem;color:var(--ink);font-weight:600}.font-button span{font-size:.7em;vertical-align:top}.font-button[aria-pressed=true]{background:var(--green-soft)}.page{padding:3.1rem 0 1.6rem}.hero{display:grid;grid-template-columns:1.13fr 1fr;gap:4rem;align-items:center;padding:1.5rem 0 2.5rem}.hero p:not(.eyebrow):not(.fine){max-width:35rem}.eyebrow{font-size:.67rem;font-weight:650;letter-spacing:.11em;text-transform:uppercase;color:var(--green);margin-bottom:.85rem}.buttons{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}.btn{border:1px solid var(--green);background:var(--green);color:#fffefa;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.8rem;border-radius:10px;min-height:49px;padding:.65rem 1.05rem;font-size:.87rem;line-height:1.5;font-weight:600;text-align:center}.btn:hover{background:#234b44;color:white}.btn.secondary{background:transparent;color:var(--green);border-color:#a6b8ae}.btn.secondary:hover{background:var(--green-soft);color:var(--green)}.btn.small{font-size:.76rem;min-height:44px;padding:.5rem .75rem}.hero .buttons{margin:1.5rem 0 1rem}.concept-card{background:#eef0e6;border:1px solid #d5dacd;border-radius:26px;padding:1.6rem;margin:0;box-shadow:var(--shadow)}.figure-top{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap}.figure-top .eyebrow{font-size:.59rem}.status-dot{font-size:.58rem;color:var(--green)}.status-dot:before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#527264;margin-right:6px}.concept-question{font-family:Georgia,serif;font-size:2rem;line-height:1.25;margin:1.5rem 0 2rem;letter-spacing:-.035em}.concept-question>span{display:block;color:#a3b3a1;font-size:3.5rem;line-height:.65}.concept-measures{display:grid;grid-template-columns:1fr auto 1fr;gap:.6rem;align-items:center}.concept-measures>div{background:#ffffff90;border:1px solid #d9decf;padding:1rem .7rem;border-radius:15px}.concept-measures small{font-size:.75rem;font-weight:600}.concept-measures p{font-size:.65rem;margin:0}.mini-scale,.mini-checks{display:flex;gap:5px;align-items:end;margin:.85rem 0}.mini-scale i{width:18%;height:10px;background:#d5dfd2;border-radius:4px}.mini-scale i:nth-child(2){height:17px}.mini-scale i:nth-child(3){height:23px}.mini-scale i:nth-child(4){height:30px}.mini-scale i:nth-child(5){height:37px}.mini-scale i.active{background:var(--green)}.mini-checks i{font-size:.75rem;font-style:normal;background:var(--green-soft);color:var(--green);width:25px;height:30px;display:grid;place-items:center;border-radius:5px}.mini-checks i:nth-child(3){background:#f2e8d8;color:#96632f}.relation{font-size:1.4rem;color:#738678}.concept-footer{display:flex;align-items:center;gap:.85rem;border-top:1px solid #ccd5c6;margin-top:1.4rem;padding-top:1rem}.concept-footer p{margin:0;font-size:.73rem}.line-symbol{width:34px;height:34px;border:2px solid #9aaa92;border-radius:50%;position:relative;flex:none}.line-symbol:before{content:'';position:absolute;border-left:2px solid var(--green);border-bottom:2px solid var(--green);width:15px;height:8px;top:8px;left:7px;transform:rotate(-35deg)}.concept-card figcaption{font-size:.6rem;color:var(--muted);margin-top:1rem}.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.4rem 0;margin:1.5rem 0 3.7rem;gap:1rem}.facts>div{display:flex;align-items:center;gap:1.1rem}.facts strong{font-family:Georgia,serif;font-weight:400;font-size:2.2rem;line-height:1;color:var(--green)}.facts span{font-size:.78rem;color:var(--muted)}.section-head{margin:2rem 0}.section-head p{max-width:44rem}.section-head.compact{margin:0 0 2rem}.section-head.compact h1{font-size:clamp(2rem,3.6vw,3.2rem)}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:1.5rem 0 3rem}.feature-grid article{padding:1.6rem 1.3rem;border:1px solid var(--line);border-radius:var(--radius);background:#fffefa70}.feature-grid article p{font-size:.9rem;color:var(--muted);margin-bottom:0}.step{display:block;color:var(--ochre);font-size:.75rem;letter-spacing:.06em;margin-bottom:1rem}.question-callout{padding:2.3rem;background:var(--green-soft);border-radius:var(--radius);max-width:100%;margin:2rem 0}.question-callout h2{font-size:1.8rem;max-width:49rem;line-height:1.4}.question-callout p{max-width:45rem}.text-link{font-size:.85rem;font-weight:650}.paper,.question-paper{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;margin-bottom:1.2rem;box-shadow:var(--shadow);min-width:0}.paper h2{font-size:1.35rem}.paper p{font-size:.91rem}.paper p.fine{font-size:.77rem}.paper.subtle{background:var(--green-soft)}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}.pill{display:inline-block;padding:.28rem .6rem;font-size:.64rem;font-weight:650;border:1px solid #bccbc2;border-radius:30px;background:var(--green-soft);color:var(--green);letter-spacing:.03em}.intro-grid .pill{margin-bottom:1rem}.simple-list{padding:0;list-style:none;margin:0 0 1.3rem}.simple-list li{margin:.75rem 0;padding-bottom:.75rem;border-bottom:1px solid var(--line);font-size:.9rem}.check-line{display:flex;align-items:flex-start;gap:.65rem;font-size:.87rem;line-height:1.6;margin:1rem 0;cursor:pointer}.check-line input{margin:.23rem 0 0}.error{color:var(--danger);font-size:.88rem;min-height:0;margin:.7rem 0}.error:empty{margin:0}.flow-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}.flow-top>div{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}.text-button{background:none;border:none;color:var(--green);padding:.4rem .1rem;text-decoration:underline;text-underline-offset:4px;font-size:.81rem;min-height:44px}.text-button.danger{color:var(--danger)}.flow-progress{max-width:850px;margin:0 auto 1.3rem}.progress{height:7px;background:#dfe5dd;border-radius:7px;overflow:hidden}.progress>span{display:block;width:0;height:100%;background:#688d7b;border-radius:7px}.flow-progress p{font-size:.79rem;color:var(--muted);margin:.5rem 0}.question-paper{max-width:850px;margin:0 auto;padding:2rem 2.3rem}.question-head{border-bottom:1px solid var(--line);padding-bottom:1rem;margin-bottom:1.2rem}.question-head h2{font-size:1.8rem}.question-head p:last-child{font-size:.94rem;color:var(--muted);margin:0}.question-field{border:0;border-bottom:1px solid var(--line);padding:0 0 1.25rem;margin:1.4rem 0;min-width:0}.question-field:last-child{border-bottom:0;margin-bottom:.5rem}.question-field legend{padding:0;font-size:1.2rem;line-height:1.65;font-weight:500;width:100%;margin-bottom:.8rem}.item-number{font-size:.71rem;color:var(--muted);font-weight:650;margin-right:.3rem}.likert{display:grid;grid-template-columns:repeat(5,1fr);gap:.45rem}.choice{position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-direction:column;border:1px solid #bccac2;border-radius:10px;min-height:95px;padding:.7rem .45rem;gap:.2rem;background:#fff;line-height:1.4;text-align:center}.choice input{position:absolute;opacity:0;width:1px;height:1px;top:5px;left:5px}.choice:has(input:checked){border:2px solid var(--green);background:#e9f0e9;padding:calc(.7rem - 1px) calc(.45rem - 1px)}.choice:has(input:focus-visible){outline:3px solid #b17437;outline-offset:3px}.choice strong{font-size:1.1rem;font-weight:600}.choice span{font-size:.8rem;color:var(--muted)}.aux-field{margin:1.5rem 0}.aux-field label{display:block;font-size:1.16rem;line-height:1.65;margin-bottom:.65rem}.question-footer{display:flex;align-items:center;justify-content:space-between;gap:.8rem;border-top:1px solid var(--line);padding-top:1.3rem;margin-top:1rem}.scale-note{background:#f3f5ed;border:1px solid var(--line);padding:.8rem;border-radius:10px;font-size:.8rem;line-height:1.7}.task-prompt{font-size:1.24rem;line-height:1.8}.task-display{margin:1.5rem 0;padding:1.1rem;background:#f1f3eb;border:1px solid var(--line);border-radius:13px;font-size:.95rem;overflow:auto}.task-display.steps,.task-display.tiles,.task-display.cards{display:flex;gap:.7rem;flex-wrap:wrap;align-items:center}.task-display.steps span{background:white;border:1px solid var(--line);border-radius:9px;padding:.5rem .7rem;font-size:.82rem}.task-display.tiles span{font-size:1.7rem;background:#fffefa;border:1px solid #b4c2b6;border-radius:9px;min-width:67px;height:85px;display:grid;place-items:center;box-shadow:0 3px 0 #cad3c5}.task-display.cards span{width:36px;height:50px;display:grid;place-items:center;border-radius:5px;font-size:.8rem;font-weight:650}.green-card{color:#fffefa;background:#48715d}.orange-card{color:#fffefa;background:#ae7236}.task-display pre{white-space:pre-wrap;font-size:.87rem;line-height:1.8;margin:0}.task-display table{font-size:.9rem}.task-options{display:grid;gap:.65rem}.task-option{display:flex;align-items:center;gap:.85rem;border:1px solid #b5c4bc;border-radius:10px;padding:.9rem 1rem;cursor:pointer;background:#fff;font-size:1.1rem;line-height:1.6;min-height:57px}.task-option:has(input:checked){background:var(--green-soft);border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}.task-option input{margin:0}.task-option span{min-width:0;overflow-wrap:anywhere}.confidence-box{margin:1.4rem 0;background:#f4f4ee;border:1px solid var(--line);border-radius:12px;padding:1rem;min-width:0}.confidence-box legend{font-size:.85rem;font-weight:650;padding:0 .3rem}.confidence-box p{font-size:.8rem;color:var(--muted)}.confidence-options{display:flex;gap:.5rem;flex-wrap:wrap}.confidence-options label{display:flex;align-items:center;gap:.4rem;font-size:.85rem;border:1px solid #b9c8c0;border-radius:8px;padding:.45rem .65rem;background:#fff;cursor:pointer;min-height:44px}.confidence-options label:has(input:checked){background:var(--green-soft);border-color:var(--green)}.confidence-options input{width:1rem;height:1rem;margin:0}.task-review{border-top:1px solid var(--line);padding:1rem 0}.task-review h3{font-size:1rem}.task-review p{font-size:.86rem}.bar-row{display:grid;grid-template-columns:9rem 1fr 3.2rem;gap:.7rem;align-items:center;margin:.8rem 0;font-size:.78rem}.bar-row small{display:block}.bar-track{height:9px;border-radius:8px;background:#e4e9e1;overflow:hidden}.bar-fill{height:100%;background:#618674;border-radius:8px}.bar-number{text-align:right;color:var(--green);font-weight:650}.import-panel{display:grid;grid-template-columns:1.2fr 1fr;gap:1rem 2rem;align-items:center}.import-panel .notice,.import-panel details{grid-column:1/-1;margin:0}.file-button{position:relative;overflow:hidden}.file-button input{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;inset:0}.file-button:has(input:focus-visible){outline:3px solid #b17437;outline-offset:3px}.notice{padding:.75rem 1rem;border-radius:10px;border:1px solid var(--line);background:#eef2e9;font-size:.81rem;margin:1rem 0}.notice.warning{background:#faf1e2;border-color:#d6bc8e;color:#704b27}.dataset-toolbar{display:flex;align-items:end;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin:1.5rem 0}.filter-fields{display:flex;gap:1rem;flex-wrap:wrap;flex:1}.filter-fields>label{font-size:.77rem;font-weight:650;flex:1;min-width:180px;max-width:350px}.filter-fields select,.filter-fields input{margin-top:.35rem;font-size:.84rem;font-weight:400}.filter-fields small{display:block;font-size:.69rem;margin-top:.3rem;font-weight:400}.empty-state{text-align:center;padding:3rem 1rem;border:1px dashed #b4c3b8;border-radius:var(--radius);margin:1.5rem 0;background:#fffefa55}.empty-state p{font-size:.92rem;max-width:32rem;margin:0 auto}.empty-icon{display:inline-grid;place-items:center;background:var(--green-soft);width:50px;height:50px;border-radius:50%;color:var(--green);font-size:1.7rem;margin-bottom:1rem}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:1.2rem 0}.metric-grid>div{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:1rem;min-width:0}.metric-grid span{display:block;font-size:.72rem;color:var(--muted)}.metric-grid strong{display:block;font-size:2.05rem;font-weight:500;color:var(--green);margin:.15rem 0}.metric-grid small{font-size:.66rem;display:block;line-height:1.5}.analysis-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:1.2rem;margin:1.2rem 0}.analysis-grid>.paper{margin-bottom:0}.analysis-grid.equal{grid-template-columns:1fr 1fr}.card-head{display:flex;justify-content:space-between;gap:1rem;align-items:center}.rho-block{text-align:right;min-width:80px}.rho-block small{font-size:.6rem;display:block}.rho-block strong{font-size:1.9rem;font-weight:500;color:var(--green)}.chart-frame{margin:1rem 0}.chart-frame svg{width:100%;height:auto;display:block}.scatter-panel details{margin-top:1rem}.sensitivity{border-top:1px solid var(--line);padding-top:.8rem;margin-top:1rem;font-size:.86rem}.quality-list{display:grid;grid-template-columns:1fr auto;gap:.55rem;font-size:.82rem;margin:1rem 0}.quality-list dt,.quality-list dd{margin:0}.quality-list dd{font-weight:650;color:var(--green)}.histogram{display:flex;gap:.5rem;align-items:end;height:170px;border-bottom:1px solid #a4b7ab;margin:2rem 0 1rem;padding:0 .2rem}.hist-bin{height:100%;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;gap:.3rem;min-width:0}.hist-bin strong{font-size:.7rem;font-weight:500}.hist-bin i{display:block;width:85%;background:#739582;border-radius:5px 5px 0 0;min-height:0}.hist-bin small{font-size:.72rem}.calibration-row{display:grid;grid-template-columns:3rem 1fr 3rem;gap:.7rem;align-items:center;font-size:.75rem;margin:.8rem 0}.calibration-tracks{display:grid;gap:4px}.calibration-tracks .bar-track{height:7px}.calibration-tracks .expected{background:#b2bdae}.legend-key{display:flex;gap:1rem;flex-wrap:wrap;font-size:.69rem;color:var(--muted);margin:1rem 0}.legend-key span:before{content:'';display:inline-block;width:13px;height:7px;margin-right:6px;border-radius:3px;background:#b2bdae}.legend-key span:last-child:before{background:#618674}.table-scroll{overflow:auto;margin:1rem 0;max-height:420px}table{width:100%;border-collapse:collapse;font-size:.77rem;text-align:left;line-height:1.6}caption{text-align:left;font-size:.73rem;color:var(--muted);padding:.3rem 0 .7rem;caption-side:top}th,td{padding:.65rem .55rem;border-bottom:1px solid var(--line);vertical-align:top}thead th{font-size:.72rem;color:var(--green);font-weight:650;background:#f0f3eb}tbody th{font-weight:550}.rate-meter{display:block;height:5px;background:#e0e6dc;border-radius:5px;min-width:70px;margin-top:.25rem}.rate-meter i{display:block;height:100%;background:#628b75;border-radius:5px}.report-card,.download-panel{display:grid;grid-template-columns:1.5fr 1fr;gap:2rem;align-items:center;margin-top:1.2rem}.operator-panel{margin-top:2rem;box-shadow:none}.operator-panel summary{font-weight:600}.operator-panel>p:first-of-type{margin-top:1rem}.operator-checks{margin-top:1.3rem}.reference-list{padding-left:1.2rem}.reference-list li{padding:.65rem 0}.reference-list a{font-size:.87rem}.reference-list p{font-size:.76rem;margin:.35rem 0 0;color:var(--muted)}summary{cursor:pointer;color:var(--green);min-height:44px;padding:.5rem 0;font-size:.86rem}details[open]>summary{margin-bottom:.5rem}.footer{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:2rem;padding:1.4rem 0;font-size:.69rem;color:var(--muted);flex-wrap:wrap}.footer>span{font-size:1rem;letter-spacing:-.04em;color:var(--green);font-weight:600}.footer small{display:block;font-size:.59rem;letter-spacing:.04em;font-weight:400}.footer p{margin:0}.footer a{font-size:.67rem}dialog{border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);color:var(--ink);max-width:480px;width:calc(100% - 32px);padding:1.7rem;box-shadow:0 20px 80px #0003}dialog::backdrop{background:#233b3560}dialog h2{font-size:1.4rem}dialog p{font-size:.9rem}dialog .buttons{justify-content:flex-end}
+@media(max-width:1050px){.hero{gap:2rem}.top-inner{gap:1rem}nav{gap:.8rem}.bar-row{grid-template-columns:7rem 1fr 3rem}.concept-card{padding:1.3rem}.analysis-grid{grid-template-columns:1.15fr 1fr}.import-panel{grid-template-columns:1fr}.report-card,.download-panel{grid-template-columns:1fr}}
+@media(max-width:780px){:root{font-size:17px}.wrap{width:calc(100% - 36px)}.top-inner{flex-wrap:wrap;min-height:85px;padding:1rem 0;row-gap:.6rem}.brand{font-size:1.4rem}nav{order:3;width:100%;margin:0;justify-content:space-between;gap:.5rem}nav a{font-size:.83rem}.font-button{margin-left:auto}.page{padding-top:2rem}.hero{grid-template-columns:1fr;gap:2rem;padding:.7rem 0 1rem}.hero h1{font-size:3rem}.concept-card{max-width:500px;width:100%;margin:0 auto}.facts{padding:1.2rem 0;margin:2rem 0;gap:.7rem}.facts>div{display:block}.facts strong{display:block;margin-bottom:.55rem;font-size:1.9rem}.facts span{font-size:.68rem;line-height:1.5;display:block}.feature-grid{grid-template-columns:1fr;gap:.8rem;margin-bottom:2rem}.feature-grid article{padding:1.2rem}.step{margin-bottom:.55rem}.question-callout{padding:1.3rem}.question-callout h2{font-size:1.45rem}.intro-grid{grid-template-columns:1fr;gap:.2rem}.paper{padding:1.3rem}.question-paper{padding:1.5rem 1.1rem}.question-field legend{font-size:1.22rem}.likert{grid-template-columns:1fr}.choice{flex-direction:row;justify-content:flex-start;min-height:48px;padding:.65rem .8rem;gap:.8rem}.choice:has(input:checked){padding:calc(.65rem - 1px) calc(.8rem - 1px)}.choice input{position:static;opacity:1;width:1.1rem;height:1.1rem;margin:0}.choice span{font-size:.91rem;text-align:left}.choice strong{font-size:1rem;width:1rem;text-align:center}.question-footer{flex-wrap:wrap}.question-footer .fine{order:3;width:100%;text-align:center}.flow-top{align-items:start}.flow-top .fine{font-size:.63rem}.metric-grid{grid-template-columns:1fr 1fr}.analysis-grid,.analysis-grid.equal{grid-template-columns:1fr;gap:1rem}.bar-row{grid-template-columns:8rem 1fr 3rem}.dataset-toolbar .buttons{width:100%}.dataset-toolbar .buttons>.btn{flex:1}.filter-fields>label{min-width:130px}.task-display.tiles span{min-width:54px;height:70px}.task-option{font-size:1.13rem;padding:.8rem}.task-prompt{font-size:1.24rem}.section-head.compact h1{font-size:2.5rem}.question-head h2{font-size:1.65rem}.report-card,.download-panel{gap:1rem}.concept-question{font-size:2.2rem}.footer{justify-content:start;gap:.8rem}.footer p{width:100%}}
+@media(max-width:400px){.wrap{width:calc(100% - 24px)}nav a{font-size:.76rem}.hero h1{font-size:2.6rem}.concept-measures{grid-template-columns:1fr 1fr}.concept-measures .relation{display:none}.concept-measures>div{padding:.75rem .5rem}.question-paper{padding:1.2rem .85rem}.metric-grid{gap:.5rem}.metric-grid>div{padding:.75rem}.metric-grid span{font-size:.67rem}.bar-row{grid-template-columns:7.3rem 1fr 2.7rem;gap:.4rem}.confidence-options{gap:.35rem}.confidence-options label{padding:.4rem .45rem}.buttons .btn{max-width:100%}.intro-grid .buttons .btn,.import-panel .buttons .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{@page{margin:16mm}body{background:white;font-size:10pt;color:#111}.wrap{width:100%}.top,.footer,.dataset-toolbar,.import-panel,.operator-panel,.font-button,.report-card .buttons,.check-line,.page:not(#page-dados),.stage-notice .buttons{display:none!important}#page-dados{display:block!important;padding:0}#dashboard-content{display:block!important}.paper,.metric-grid>div{box-shadow:none;border:1px solid #ccc;padding:12px;border-radius:8px;break-inside:avoid}.analysis-grid{display:block}.metric-grid{grid-template-columns:repeat(4,1fr)}.table-scroll{max-height:none;overflow:visible}details:not([open]){display:none}.section-head h1{font-size:24pt}.paper h2{font-size:15pt}.paper p{font-size:10pt}.notice{font-size:10pt}.chart-frame svg{max-height:260px}.page[hidden]{display:none!important}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.strategy-card{margin:1.5rem 0;padding:1.25rem;background:var(--soft,#eef2e8);border-radius:12px}.strategy-card h3{margin:.5rem 0}#central-panel .filter-fields{flex-wrap:wrap;margin-bottom:1rem}#central-panel input[type=text],#central-contact,#central-link{width:100%;padding:.7rem;border:1px solid #b8c9bc;border-radius:8px;background:#fff;color:#244f47}#central-link{margin:.6rem 0 1rem}#participant-learning{max-width:850px;margin:1.5rem auto}#learning-form .buttons{margin-top:1.5rem}#remote-receipt{margin-top:1.5rem}#withdraw-panel{margin-top:1.5rem}
+</style><style>:root{--v2-green:#315d56;--v2-line:#d7dfd9}select,input[type=text],input[type=number],input[type=email]{font:inherit;padding:.7rem;border:1px solid var(--v2-line);border-radius:8px;background:#fff;color:#263a38;max-width:100%}.v2-question{border:0;border-bottom:1px solid var(--v2-line);padding:1.4rem 0;margin:0}.v2-question legend{font-size:1.08rem;font-weight:600;line-height:1.55;max-width:100%}.v2-options{display:grid;gap:.65rem;margin:1rem 0}.v2-options label{display:flex;gap:.7rem;align-items:flex-start;background:#f3f5ed;border:1px solid var(--v2-line);border-radius:10px;padding:.8rem;cursor:pointer}.v2-options input{margin-top:.4rem;flex-shrink:0}.v2-options label:has(input:checked){background:#e0eddf;border-color:#315d56}.v2-visual{white-space:pre;font:1.65rem/1.5 monospace;padding:1rem;background:#eef2e8;display:inline-block}.v2-strategies{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.v2-strategies article{padding:1rem;border:1px solid var(--v2-line);border-radius:10px}.v2-strategies h3{font-size:1.2rem}.v2-method{margin:3rem 0}.v2-meter{height:7px;border-radius:4px;background:#e1e7dd;min-width:100px;margin:.3rem 0}.v2-meter span{display:block;height:100%;background:#497963;border-radius:4px}.v2-cell small{display:block;max-width:210px}.v2-empty{color:#6b6d65}#flow{max-width:900px;margin:2.5rem auto}#progress{margin-top:1rem}.v2-admin-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.v2-admin-grid label{display:grid;gap:.4rem}.v2-toolbar{display:flex;flex-wrap:wrap;gap:1rem;align-items:end;margin:1.5rem 0}.v2-toolbar label{display:grid;gap:.4rem}.v2-link{width:100%;margin:1rem 0}.v2-matrix td,.v2-matrix th{min-width:65px;white-space:nowrap}.v2-audio{margin:.5rem 0}.large-text{font-size:120%}@media(max-width:700px){.v2-strategies,.v2-admin-grid{grid-template-columns:1fr}.top-inner nav{font-size:.85rem;gap:.75rem}.question-paper{padding:1.2rem}.v2-options label{padding:.8rem}.section-head h1{font-size:2.4rem}}
+
+.v2-likert{grid-template-columns:repeat(6,minmax(0,1fr))}.v2-likert label{flex-direction:column;align-items:center;text-align:center;justify-content:flex-start;font-size:.88rem}.v2-likert input{margin:.2rem 0}#profile th small{display:block;font-weight:400;margin-top:.2rem}#finish .table-scroll{max-height:none}.large-text body{font-size:1.2rem}@media(max-width:700px){.v2-likert{grid-template-columns:repeat(2,minmax(0,1fr))}.v2-likert label{flex-direction:row;text-align:left;align-items:flex-start}}
+#step-meter{display:block;width:100%;height:.55rem;margin:.7rem 0;accent-color:#315d56}#short-progress{margin-bottom:1.2rem}.v2-task-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem}.v2-full{grid-column:1/-1}#flow{max-width:1060px}.v2-task-pair .v2-question{min-width:0}.v2-task-pair .v2-options label{padding:.6rem .7rem}.v2-task-pair legend{font-size:1rem}.v2-method>summary{font-size:1rem;font-weight:600}.v2-method-content{padding-top:1rem}#draft-box{margin:1.5rem 0}#strategies{margin-top:1.3rem}#finish th:nth-child(2){min-width:160px}@media(max-width:760px){.v2-task-pair{grid-template-columns:1fr;gap:.4rem}.flow-top{align-items:flex-start;flex-wrap:wrap}.flow-top .buttons{gap:.4rem}.v2-visual{font-size:1.25rem}.top-inner{gap:.7rem;flex-wrap:wrap;padding:.7rem 0}.top-inner nav{gap:.7rem}.brand{font-size:1.25rem}.top-inner .font-button{margin-left:auto}}
+
+.v2-diagonal{background:#e0eddf;font-weight:600}.v2-indirect{border-left:4px solid #b9a881;padding-left:1rem}.v2-formula{overflow-x:auto;padding:1rem 0}#rank-table td{font-variant-numeric:tabular-nums}.font-button{font:inherit;cursor:pointer}
+</style></head>
+<body data-hosted="false">
+<a class="skip" href="#page-dados">Ir para o painel de análise</a>
+<header class="top"><div class="wrap top-inner"><a class="brand" href="index.html">percepção <small>FECITEL-JM · Painel</small></a><nav aria-label="Navegação do painel"><a href="index.html">Aplicação do participante</a><a href="#importar" aria-current="page">Importar e filtrar</a><a href="#analise">Indicadores</a><a href="#spearman-calibracao">Spearman e calibração</a><a href="#aprendizagem-painel">Feedback e permutação</a><a href="#plano-grupo">Plano do grupo</a></nav><button id="font" class="font-button" type="button" aria-label="Aumentar tamanho do texto" aria-pressed="false">A+</button></div></header>
+<main id="page-dados" class="wrap page">
+ <div class="section-head compact">
+  <p class="eyebrow">Percepção · Painel analítico local e auditável · Interface 2.3.0</p>
+  <h1>Consolidação, diagnóstico e verificação estatística</h1>
+  <p class="lead">Importe arquivos JSON individuais ou lotes entregues pelos participantes, confira duplicatas e conflitos e examine correlações de Spearman, matrizes de calibração e o experimento de feedback em lógica mantendo públicos, percursos, etapas e versões separados.</p>
+ </div>
+
+ <section id="importar" class="paper import-panel">
+  <div>
+   <h2>1. Recebimento e conferência de arquivos JSON</h2>
+   <p>Carregue os arquivos <code>.json</code> exportados pelos participantes ao final da sessão (<code>percepcao-registro-2.0</code>) ou um lote consolidado (<code>percepcao-lote-2.0</code>). Tudo é processado localmente neste navegador.</p>
+   <p class="fine">O painel valida o formato e as regras de versão, ignora duplicatas idênticas pelo mesmo código, preserva conflitos (mesmo código com respostas diferentes) e alerta caso existam respostas principais idênticas com códigos distintos.</p>
+  </div>
+  <div class="buttons">
+   <label class="btn file-button" for="file-input">Importar arquivos JSON<input id="file-input" type="file" accept=".json,application/json" multiple></label>
+   <button id="load-demo" class="btn secondary" type="button">Carregar exemplo simulado (N = 20)</button>
+   <button id="clear-data" class="text-button danger" type="button">Limpar registros do painel</button>
+  </div>
+  <p id="import-status" class="notice" aria-live="polite">Nenhum arquivo importado nesta sessão. Carregue arquivos JSON reais ou use o exemplo simulado identificado para testar os cálculos do painel.</p>
+  <details id="conflicts-box" hidden>
+   <summary id="conflicts-summary">Conflitos e alertas de conferência</summary>
+   <div id="conflicts-list" class="table-scroll"></div>
+  </details>
+ </section>
+
+ <section class="paper" aria-label="Filtros da seleção analítica">
+  <h2>2. Seleção estrita de análise</h2>
+  <p class="fine">Para evitar misturar instrumentos ou condições distintas, cada análise exige a separação por público, percurso, etapa, interface e versão do complemento.</p>
+  <div class="v2-toolbar">
+   <label for="filter-cohort">Público (contexto)
+    <select id="filter-cohort">
+     <option value="fundamental">Fundamental · anos finais · 13+</option>
+     <option value="medio" selected>Ensino médio</option>
+     <option value="superior">Ensino superior · cursando ou concluído</option>
+     <option value="adultos">Adultos · cotidiano e trabalho</option>
+    </select>
+   </label>
+   <label for="filter-mode">Percurso
+    <select id="filter-mode">
+     <option value="feira" selected>Percurso da feira · lógica</option>
+     <option value="completo">Percurso completo · oito áreas</option>
+    </select>
+   </label>
+   <label for="filter-stage">Etapa registrada
+    <select id="filter-stage">
+     <option value="demonstracao" selected>Demonstração / rota livre</option>
+     <option value="piloto">Piloto autorizado</option>
+     <option value="pesquisa">Pesquisa de campo</option>
+    </select>
+   </label>
+   <label for="filter-origin">Origem do registro
+    <select id="filter-origin">
+     <option value="reais" selected>Participantes (simulado = false)</option>
+     <option value="simulados">Exemplo simulado (simulado = true)</option>
+    </select>
+   </label>
+   <label for="filter-interface">Versão da interface
+    <select id="filter-interface">
+     <option value="2.3.0" selected>2.3.0 (atual)</option>
+     <option value="2.2.0">2.2.0</option>
+     <option value="anterior">Anterior / sem campo</option>
+    </select>
+   </label>
+   <label for="filter-transfer">Versão do complemento
+    <select id="filter-transfer">
+     <option value="aprendizagem-0.2" selected>aprendizagem-0.2 (revisado)</option>
+     <option value="multidominios-0.1">multidominios-0.1 (anterior)</option>
+     <option value="todas">Todas na seleção</option>
+    </select>
+   </label>
+   <label for="filter-batch">Lote (opcional)
+    <input id="filter-batch" type="text" placeholder="Todos os lotes">
+   </label>
+  </div>
+  <div class="buttons">
+   <button id="export-bundle" class="btn secondary small" type="button" disabled>Exportar lote JSON</button>
+   <button id="export-csv" class="btn secondary small" type="button" disabled>Exportar planilha CSV (seleção)</button>
+   <button id="export-aggregate" class="btn secondary small" type="button" disabled>Exportar apresentação agregada (sem IDs)</button>
+   <button id="export-dictionary" class="btn secondary small" type="button">Baixar instrumentos e gabaritos (JSON)</button>
+   <button id="print-report" class="btn secondary small" type="button">Imprimir / Salvar PDF</button>
+  </div>
+ </section>
+
+ <div id="empty-panel" class="empty-state">
+  <div class="empty-icon" aria-hidden="true">∑</div>
+  <h2>Sem registros para a seleção atual</h2>
+  <p>Importe arquivos JSON acima, ajuste os filtros (público, percurso, etapa ou versão da interface) ou clique em <strong>Carregar exemplo simulado</strong> para inspecionar o funcionamento completo das tabelas e testes estatísticos.</p>
+ </div>
+
+ <div id="dashboard-content" hidden>
+  <section class="metric-grid" aria-label="Resumo da seleção">
+   <div><span>Registros na seleção</span><strong id="metric-n">0</strong><small id="metric-origin">de 0 carregados no painel</small></div>
+   <div><span>Percurso analisado</span><strong id="metric-mode">Feira</strong><small id="metric-domains-count">1 domínio com gabarito</small></div>
+   <div><span>Pares completos (Lógica)</span><strong id="metric-lm-pairs">0</strong><small id="metric-lm-rho">Spearman ρ = —</small></div>
+   <div><span>Complemento concluído</span><strong id="metric-transfer-done">0</strong><small id="metric-transfer-assigned">de 0 atribuídos ao sorteio</small></div>
+  </section>
+
+  <section id="analise" class="paper">
+   <h2>3. Domínios com gabarito objetivo direto</h2>
+   <p>A média de autopercepção (1 a 5) exige os cinco itens completos da área. O desempenho exige quatro tarefas aplicadas (0 a 4 acertos; 0% a 100%). A correlação por postos de Spearman (ρ) utiliza postos médios para empates e exige ao menos três pares completos com variação em ambas as medidas.</p>
+   <div class="table-scroll">
+    <table>
+     <caption>Indicadores descritivos, associação e calibração nos domínios com gabarito objetivo verificável</caption>
+     <thead>
+      <tr>
+       <th>Domínio e indicador</th>
+       <th>Pares (n) / Ausentes</th>
+       <th>Autopercepção média (1–5)</th>
+       <th>Desempenho médio</th>
+       <th>Spearman (ρ)</th>
+       <th>Calibração (n)</th>
+       <th>Erro direcional médio (EC)</th>
+       <th>Erro absoluto médio (EAM)</th>
+      </tr>
+     </thead>
+     <tbody id="table-objective"></tbody>
+    </table>
+   </div>
+  </section>
+
+  <section id="indirect-section" class="paper v2-indirect" hidden>
+   <h2>4. Domínios baseados em observação declarada ou cenários indiretos</h2>
+   <p>Apresentados separadamente dos domínios com gabarito algorítmico exato: a área corporal-cinestésica depende da declaração de observador presencial sobre quatro critérios; as áreas interpessoal e intrapessoal utilizam julgamento de cenários situacionais.</p>
+   <div class="table-scroll">
+    <table>
+     <caption>Indicadores nos domínios declarados (Corporal) e por cenário indireto (Interpessoal e Intrapessoal)</caption>
+     <thead>
+      <tr>
+       <th>Domínio e natureza</th>
+       <th>Pares (n) / Ausentes</th>
+       <th>Autopercepção média (1–5)</th>
+       <th>Critérios / Cenários</th>
+       <th>Spearman (ρ)</th>
+       <th>Calibração (n)</th>
+       <th>Erro direcional médio (EC)</th>
+       <th>Erro absoluto médio (EAM)</th>
+      </tr>
+     </thead>
+     <tbody id="table-indirect"></tbody>
+    </table>
+   </div>
+  </section>
+
+  <section id="spearman-calibracao" class="analysis-grid equal">
+   <div class="paper">
+    <div class="card-head">
+     <div>
+      <h2>5. Auditoria de postos de Spearman</h2>
+      <label for="detail-domain" class="fine">Inspecionar área:
+       <select id="detail-domain"></select>
+      </label>
+     </div>
+     <div class="rho-block">
+      <small>Spearman ρ</small>
+      <strong id="detail-rho">—</strong>
+     </div>
+    </div>
+    <p id="detail-spearman-summary" class="fine"></p>
+    <details>
+     <summary>Ver tabela de postos médios e desvios por participante</summary>
+     <div class="table-scroll">
+      <table id="rank-table">
+       <caption>Postos médios para empates centrados em (n + 1) / 2</caption>
+       <thead>
+        <tr><th>Caso</th><th>Auto (1–5)</th><th>Acertos (0–4)</th><th>R(Auto)</th><th>R(Desemp)</th><th>ΔR_x · ΔR_y</th></tr>
+       </thead>
+       <tbody id="rank-tbody"></tbody>
+      </table>
+     </div>
+    </details>
+   </div>
+
+   <div class="paper">
+    <h2>6. Matriz de previsão e desempenho (calibração)</h2>
+    <p id="detail-cal-summary" class="fine"></p>
+    <div class="table-scroll">
+     <table class="v2-matrix">
+      <caption>Linhas: previsão antes do bloco (0 a 4). Colunas: acertos obtidos (0 a 4). A diagonal destacada indica previsão exata.</caption>
+      <thead>
+       <tr><th>Previsão \ Resultado</th><th>0 (0%)</th><th>1 (25%)</th><th>2 (50%)</th><th>3 (75%)</th><th>4 (100%)</th></tr>
+      </thead>
+      <tbody id="cal-matrix-tbody"></tbody>
+     </table>
+    </div>
+   </div>
+  </section>
+
+  <section id="matrix-domains-section" class="paper" hidden>
+   <h2>7. Matriz de correlações de Spearman entre domínios (desempenho)</h2>
+   <p class="fine">Exibe o coeficiente ρ de Spearman (e o denominador n de pares completos) entre os escores de atividades das oito áreas no percurso completo. Estas correlações descrevem a amostra e não testam isoladamente a independência fatorial das inteligências.</p>
+   <div class="table-scroll">
+    <table class="v2-matrix">
+     <caption>Correlação por postos de Spearman entre indicadores de desempenho por área</caption>
+     <thead id="domain-matrix-thead"></thead>
+     <tbody id="domain-matrix-tbody"></tbody>
+    </table>
+   </div>
+  </section>
+
+  <section id="aprendizagem-painel" class="paper">
+   <h2>8. Experimento de feedback em lógica e teste bilateral de permutação</h2>
+   <p>Compara o desempenho nas quatro situações novas de lógica após sorteio entre apresentação da <strong>resposta correta</strong> e <strong>resposta correta com explicação da estratégia</strong>. Desfechos ausentes permanecem sem nota zero.</p>
+   <div class="table-scroll">
+    <table>
+     <caption>Atribuição, conclusão e desempenho nas quatro situações novas por grupo de feedback</caption>
+     <thead>
+      <tr>
+       <th>Grupo sorteado</th>
+       <th>Atribuídos (n)</th>
+       <th>Concluídos</th>
+       <th>Ausentes (não concluídos)</th>
+       <th>Taxa de conclusão</th>
+       <th>Média de acertos (0–4)</th>
+       <th>Aproveitamento médio</th>
+       <th>Distribuição (0 / 1 / 2 / 3 / 4 acertos)</th>
+      </tr>
+     </thead>
+     <tbody id="learning-tbody"></tbody>
+    </table>
+   </div>
+   <div id="permutation-box" class="notice"></div>
+  </section>
+
+  <section id="plano-grupo" class="paper">
+   <h2>9. Diagnóstico descritivo e plano de prática para o grupo</h2>
+   <p>Destaca, em cada área com ao menos três aplicações válidas por atividade, o item com menor proporção de acertos para apoiar a revisão do enunciado, das condições de aplicação e o planejamento pedagógico com os orientadores.</p>
+   <div id="group-plan-grid" class="v2-strategies"></div>
+  </section>
+ </div>
+</main>
+<footer class="wrap footer">
+ <p>Percepção · Painel Analítico · Interface 2.3.0</p>
+ <div class="buttons"><a href="index.html">Ir para aplicação do participante</a><a href="#page-dados">Voltar ao topo</a></div>
+</footer>
+<script>(function(root){
+'use strict';
+const APP_VERSION='2.3.0',VERSION='multidominios-0.1',TRANSFER_VERSION='aprendizagem-0.2',SCHEMA='percepcao-registro-2.0';
+const COHORTS={fundamental:'Fundamental · anos finais · 13+',medio:'Ensino médio',superior:'Ensino superior · cursando ou concluído',adultos:'Adultos · cotidiano e trabalho'};
+const DOMAINS=[['L','Linguística','Leitura e interpretação'],['LM','Lógico-matemática','Regras e resolução de problemas'],['E','Espacial','Orientação e transformações visuais'],['M','Musical','Discriminação de padrões sonoros'],['C','Corporal-cinestésica','Observação de tarefas manuais'],['I','Interpessoal','Julgamento de situações sociais'],['IN','Intrapessoal','Planejamento em cenários e previsão do desempenho'],['N','Naturalista','Classificação e observação de dados naturais']].map(([id,label,measure])=>({id,label,measure,proxy:['I','IN'].includes(id),observed:id==='C'}));
+const ITEMS={L:['Explico uma ideia de modo que outra pessoa compreenda.','Identifico a ideia principal de um texto.','Organizo minhas ideias antes de escrever ou falar.','Percebo diferenças de significado entre expressões parecidas.','Adapto minha explicação à pessoa com quem converso.'],LM:['Reconheço padrões em sequências e problemas.','Divido um problema difícil em etapas menores.','Comparo soluções antes de escolher uma.','Percebo contradições em uma explicação.','Uso quantidades e proporções para resolver problemas.'],E:['Imagino um objeto visto de outro ângulo.','Compreendo mapas e representações visuais.','Percebo posições e distâncias entre objetos.','Imagino o resultado de uma construção antes de fazê-la.','Relaciono um desenho a um objeto tridimensional.'],M:['Percebo diferenças de ritmo entre sons.','Reproduzo um ritmo depois de ouvi-lo.','Percebo quando uma melodia sobe ou desce.','Reconheço uma melodia em uma versão diferente.','Distingo sons de fontes ou instrumentos diferentes.'],C:['Aprendo uma sequência de movimentos ao observá-la.','Coordeno movimentos para executar uma tarefa.','Realizo tarefas manuais com precisão.','Ajusto movimentos quando o resultado não sai como planejei.','Manipulo objetos com controle e coordenação.'],I:['Percebo sinais de mudança na emoção de outra pessoa.','Mudo minha explicação quando alguém não a compreende.','Considero o ponto de vista de outra pessoa.','Percebo quando alguém tem dificuldade para participar.','Coopero com pessoas que pensam de modo diferente.'],IN:['Percebo o que estou sentindo antes de decidir.','Avalio com sinceridade como me saí em uma atividade.','Reconheço facilidades e dificuldades ao aprender.','Estabeleço objetivos que considero possíveis.','Percebo quando preciso mudar minha estratégia de estudo ou trabalho.'],N:['Distingo elementos naturais que parecem semelhantes.','Reconheço padrões em plantas, animais ou outros elementos naturais.','Percebo mudanças no ambiente ao longo do tempo.','Reconheço relações entre elementos de um ambiente.','Classifico elementos naturais por características observáveis.']};
+const STRATEGIES={L:'Separe o que o texto afirma do que você está supondo. Sublinhe a informação que sustenta a resposta.',LM:'Registre cada etapa e confira se a regra permite a conclusão. Use um exemplo contrário para testar uma hipótese.',E:'Marque a posição inicial e faça uma transformação de cada vez. Desenhe a orientação antes e depois.',M:'Ouça um atributo por vez: altura, duração ou padrão. Reproduza as sequências em condições semelhantes.',C:'Observe a sequência antes de começar, divida-a em partes e pratique sentado, com objetos seguros. Adaptações devem ser registradas.',I:'Pergunte o que cada pessoa precisa e confira a compreensão. Uma resposta a um cenário não substitui a interação real.',IN:'Defina uma meta observável, preveja o resultado e confira o que aconteceu. Revise a estratégia com base nas evidências.',N:'Escolha uma característica observável para classificar. Compare dados antes de atribuir uma causa.'};
+const validCohort=c=>Object.hasOwn(COHORTS,c);
+const MODES={completo:'Percurso completo',feira:'Percurso da feira · lógica'};
+const recordMode=r=>r.percurso||'completo';
+const domainIds=mode=>mode==='feira'?['LM']:DOMAINS.map(d=>d.id);
+const recordOrder=r=>r.ordem_dominios?[...r.ordem_dominios]:domainIds(recordMode(r));
+function randomIndex(upper){
+ const top=4294967296,limit=top-top%upper,buffer=new Uint32Array(1);let n;
+ do{root.crypto.getRandomValues(buffer);n=buffer[0];}while(n>=limit);
+ return n%upper;
+}
+function randomOrder(mode='completo',draw=randomIndex){
+ if(!Object.hasOwn(MODES,mode))throw new Error('Percurso inválido.');
+ const a=domainIds(mode);for(let i=a.length-1;i>0;i--){const j=draw(i+1);if(!Number.isInteger(j)||j<0||j>i)throw new Error('Sorteio inválido.');[a[i],a[j]]=[a[j],a[i]];}return a;
+}
+function items(c){if(!validCohort(c))throw new Error('Público inválido.');const context={fundamental:'Pense em atividades da escola, de casa e de lazer.',medio:'Pense em aulas, projetos e situações do cotidiano.',superior:'Pense em estudos, projetos acadêmicos e situações do cotidiano.',adultos:'Pense em atividades do cotidiano, de trabalho ou de aprendizagem.'}[c];return DOMAINS.flatMap(d=>ITEMS[d.id].map((text,i)=>({id:d.id+(i+1),domain:d.id,text,context})));}
+function tasks(c,transfer=false,transferVersion=TRANSFER_VERSION){
+ if(!validCohort(c))throw new Error('Público inválido.');const level=Object.keys(COHORTS).indexOf(c),n=[2,3,5,4][level]+(transfer?1:0),place=['grupo da escola','projeto da turma','grupo de pesquisa','grupo de trabalho'][level],a=10+level*3+(transfer?2:0),b=8+level*2,both=3+level,total=a+b+6;
+ const q=(id,domain,title,prompt,options,answer,explanation,extra={})=>({id:(transfer?'P_':'')+id,domain,title,prompt,options,answer,explanation,...extra});
+ const logic=[
+ q('LM1','LM','Acompanhar uma regra',`Em um ${place}, um contador começa em ${n}. A cada rodada, multiplique o valor por ${transfer?3:2} e some 1. Qual é o valor após duas rodadas?`,[String(n*(transfer?3:2)+1),String((n*(transfer?3:2)+1)*(transfer?3:2)+1),String(n+2),String(n*(transfer?3:2)**2)],2,'Aplique a regra ao resultado da primeira rodada, e não novamente ao valor inicial.'),
+ q('LM2','LM','Conferir uma condição',transfer?`No ${place}, sempre que uma solicitação é aprovada, há um comprovante. Não há comprovante. Considerando que a regra foi cumprida, o que se conclui?`:`No ${place}, sempre que há um teste, um aviso é enviado. Um aviso foi enviado. O que a regra permite concluir?`,transfer?['A solicitação foi aprovada.','Nada aconteceu.','A solicitação não foi aprovada.','Há comprovante.']:['Certamente houve teste.','Certamente não houve teste.','O aviso só pode ter esse motivo.','O aviso pode ter outro motivo; não se pode afirmar que houve teste.'],transfer?3:4,transfer?'A contraposição é válida: se P implica Q e Q não ocorreu, P não ocorreu, supondo a regra cumprida.':'A regra não permite inverter a condição. Um aviso pode ter outro motivo.'),
+ q('LM3','LM','Evitar contagem dupla',`Há ${total} pessoas em um ${place}. Dessas, ${a} participam de uma atividade, ${b} de outra e ${both} das duas. Quantas não participam de nenhuma?`,[String(6),String(8+both),String(6+both),String(total-a)],3,`A união é ${a} + ${b} − ${both}. Subtraia a união do total: ficam ${6+both}.`),
+ q('LM4','LM','Preservar um contador',`Um contador começa em zero antes da leitura da lista [${n+3}, ${n-1}, ${n+5}, ${n}]. Some 1 para cada número maior que ${n}, sem reiniciar o contador. Qual é o valor final?`,['1','2','3','4'],2,'Somente o primeiro e o terceiro valores são maiores que o limite. O valor igual ao limite não conta.')];
+ if(transfer){
+  if(transferVersion===VERSION)return logic;
+  if(transferVersion!==TRANSFER_VERSION)throw new Error('Versão do complemento inválida.');
+  const start=[4,6,7,5][level],mult=level===2?3:2,rounds=level===2?3:2,increment=2;
+  let result=start;for(let i=0;i<rounds;i++)result=result*mult+increment;
+  const first=start*mult+increment,aa=[9,14,18,15][level],bb=[7,11,13,12][level],overlap=[2,3,4,5][level],size=[24,35,39,35][level],outside=size-aa-bb+overlap,limit=[5,7,9,6][level];
+  return [
+   q('LM1','LM','Atualizar uma quantidade',`Em um ${place}, um registro começa em ${start}. Em cada rodada, multiplique a quantidade por ${mult} e some ${increment}. Qual será a quantidade após ${rounds} rodadas?`,[String(result),String(first),String(start*mult**rounds),String(start+rounds*increment)],1,'Use o resultado de cada rodada como entrada da seguinte, incluindo a soma em todas as etapas.'),
+   q('LM2','LM','Examinar um sinal',`No ${place}, a regra é: sempre que um equipamento conclui uma verificação, uma luz acende. A luz acendeu. O que essa informação permite concluir?`,['O equipamento certamente concluiu a verificação.','A luz pode ter outro motivo para acender; a conclusão da verificação precisa ser conferida.','O equipamento certamente deixou de fazer a verificação.','A regra afirma que a luz só pode acender após essa verificação.'],2,'A regra apresenta uma condição suficiente para a luz acender. Observar a luz, isoladamente, não permite inverter a regra.'),
+   q('LM3','LM','Contar participantes',`Em um ${place} com ${size} pessoas, ${aa} escolheram a oficina A, ${bb} a oficina B e ${overlap} escolheram ambas. Quantas pessoas ficaram fora das duas oficinas?`,[String(size-aa-bb),String(size-aa),String(size-aa-bb+2*overlap),String(outside)],4,`As duas oficinas reúnem ${aa} + ${bb} − ${overlap} = ${aa+bb-overlap} pessoas. Fora delas ficam ${size} − ${aa+bb-overlap} = ${outside}.`),
+   q('LM4','LM','Filtrar uma lista',`Um contador começa em zero. Leia a lista [${limit-2}, ${limit+4}, ${limit+1}, ${limit}, ${limit+3}] e some 1 para cada valor maior que ${limit}, preservando o contador entre os valores. Qual é o total final?`,['2','4','3','5'],3,'O segundo, o terceiro e o quinto valores atendem à condição. O valor igual ao limite fica fora da contagem.')
+  ];
+ }
+ if(level===2){const t=logic[0];t.prompt=`Em um grupo de pesquisa, um contador começa em ${n}. A cada rodada, triplique o valor e some 1. Qual é o valor após três rodadas?`;t.options=[String(n*3+1),String(((n*3+1)*3+1)*3+1),String((n*3+1)*3+1),String(n*27)];t.explanation='Acompanhe as três atualizações sucessivas, preservando o resultado de cada uma.';}
+
+ const text=['A biblioteca abriu uma sala silenciosa. O grupo gostou do espaço, mas pediu mais mesas.','A turma testou um aplicativo. Os botões foram considerados claros, mas as instruções receberam sugestões de melhoria.','Um estudo piloto avaliou um formulário. Os participantes compreenderam os botões, mas relataram ambiguidades nas instruções.','Uma equipe avaliou uma ferramenta de trabalho. Os comandos foram compreendidos, mas o guia precisou de revisão.'][level];
+ const language=[q('L1','L','Distinguir informação e suposição',text+' Qual afirmação é sustentada pelo texto?',['Todas as pessoas preferem esse recurso.','Não existe nenhuma melhoria possível.','Houve aprovação de um aspecto e uma sugestão de melhoria.','O recurso foi rejeitado por todos.'],3,'O texto registra uma avaliação favorável e uma necessidade de melhoria, sem generalizar para todas as pessoas.'),q('L2','L','Ler uma condição','“A atividade ocorrerá somente se a sala estiver disponível.” A atividade ocorreu. O que é necessariamente verdadeiro?',['A sala estava disponível.','A sala estava vazia o dia inteiro.','Toda sala disponível terá uma atividade.','Não havia outra sala.'],1,'“Somente se” apresenta uma condição necessária, sem afirmar as outras informações.'),q('L3','L','Identificar a conclusão',`No ${place}, a frase é: “O material deve ser revisado, pois contém instruções contraditórias.” Qual é a conclusão?`,['Há um grupo.','Todo material é contraditório.','A revisão já aconteceu.','O material deve ser revisado.'],4,'A recomendação de revisão é a conclusão; a contradição é a justificativa.'),q('L4','L','Preservar o sentido','Qual frase mantém o sentido de “Algumas pessoas terminaram a atividade”?',['Todas terminaram.','Pelo menos uma terminou, sem afirmar que todas terminaram.','Ninguém terminou.','Exatamente metade terminou.'],2,'“Algumas” não informa uma proporção exata e não autoriza afirmar “todas”.')];
+ const turns=[1,2,3,1][level],direction=['leste','sul','oeste'][turns-1];
+ const spatial=[q('E1','E','Girar uma seta',`Uma seta aponta para cima. Ela gira ${turns} vez(es), 90° no sentido horário a cada vez. Para onde aponta?`,['Direita / leste','Baixo / sul','Esquerda / oeste','Cima / norte'],turns,'Acompanhe cada quarto de volta no sentido horário.',{visual:'↑'}),q('E2','E','Acompanhar deslocamentos',`Partindo de (0,0), ande ${n+1} unidades para leste e ${n} para norte; depois ${n-1} para oeste. Onde você chega?`,[`(2, ${n})`,`(${n+1}, 2)`,`(0, ${n})`,`(${n+1}, 0)`],1,'No eixo horizontal, a diferença é 2 para leste. O deslocamento para norte permanece.'),q('E3','E','Refletir uma posição','Em uma grade 3 × 3, uma marca está no canto superior esquerdo. Após uma reflexão em um espelho vertical, onde fica a marca?',['Inferior esquerdo','Centro','Inferior direito','Superior direito'],4,'Um espelho vertical troca esquerda e direita, mantendo a altura.',{visual:'● □ □\n□ □ □\n□ □ □'}),q('E4','E','Conferir vistas','Em um arranjo de cubos, a coluna A tem 2 cubos e a coluna B tem 1 cubo. Todos estão sobre a mesma mesa. Visto de cima, quantas posições da mesa estão ocupadas?',['1','2','3','4'],2,'A vista de cima conta as duas posições das colunas, sem somar suas alturas.')];
+ const sound=[q('M1','M','Direção das notas','Ouça a sequência. A altura das três notas vai em qual direção?',['Sobe','Desce','Permanece igual','Alterna para baixo e para cima'],1,'As frequências aumentam em cada nota.',{audio:[[220+level*20,0.4],[330+level*20,0.4],[440+level*20,0.4]]}),q('M2','M','Comparar durações','Ouça as três notas. Qual tem a maior duração?',['A primeira','A terceira','A segunda','Todas são iguais'],3,'A nota central dura mais; a altura foi mantida.',{audio:[[330,0.18],[330,0.65],[330,0.18]]}),q('M3','M','Reconhecer um padrão','Ouça duas sequências separadas por uma pausa maior. O padrão de alturas da segunda é igual ao da primeira?',['Sim, são iguais.','Não: a ordem final é diferente.','A segunda tem uma nota a menos.','A primeira tem apenas uma nota.'],2,'O último movimento muda: uma sequência termina mais grave e a outra continua subindo.',{audio:[[300,0.25],[450,0.25],[300,0.25],[0,0.8],[300,0.25],[450,0.25],[600,0.25]]}),q('M4','M','Perceber repetição','Ouça as quatro notas. Qual descrição corresponde à sequência?',['Quatro alturas diferentes','Todas iguais','Duas graves seguidas de duas agudas','Alternância grave-aguda-grave-aguda'],4,'A sequência alterna duas alturas.',{audio:[[250,0.3],[500,0.3],[250,0.3],[500,0.3]]})];
+ if(level===1){sound[0].audio=[[600,.4],[440,.4],[220,.4]];sound[0].answer=2;sound[0].explanation='As frequências diminuem a cada nota.';sound[1].audio=[[330,.18],[330,.18],[330,.65]];sound[1].answer=2;sound[1].explanation='A terceira nota tem a maior duração.';sound[2].audio=[[300,.25],[450,.25],[300,.25],[0,.8],[300,.25],[450,.25],[300,.25]];sound[2].answer=1;sound[2].explanation='A segunda sequência repete as mesmas alturas na mesma ordem.';sound[3].audio=[[250,.3],[250,.3],[500,.3],[500,.3]];sound[3].answer=3;sound[3].explanation='As duas primeiras notas são mais graves e as duas últimas são mais agudas.';}
+ if(level===2){sound[0].audio=[[440,.4],[220,.4],[550,.4]];sound[0].answer=4;sound[0].explanation='A altura desce da primeira para a segunda nota e sobe da segunda para a terceira.';sound[1].audio=[[330,.65],[330,.18],[330,.18]];sound[1].answer=1;sound[1].explanation='A primeira nota tem a maior duração.';sound[2].prompt='Ouça as sequências. A segunda foi deslocada para notas mais agudas. O padrão relativo de subidas e descidas permanece o mesmo?';sound[2].audio=[[300,.25],[450,.25],[300,.25],[0,.8],[450,.25],[600,.25],[450,.25]];sound[2].answer=1;sound[2].explanation='As duas sequências sobem e voltam ao valor inicial; a segunda é globalmente mais aguda.';sound[3].audio=[[330,.3],[330,.3],[330,.3],[330,.3]];sound[3].answer=2;sound[3].explanation='As quatro notas têm a mesma altura.';}
+ if(level===3){sound[0].audio=[[600,.4],[450,.4],[300,.4]];sound[0].answer=2;sound[0].explanation='As frequências diminuem a cada nota.';sound[3].audio=[[220,.3],[330,.3],[440,.3],[550,.3]];sound[3].answer=1;sound[3].explanation='As quatro notas têm frequências diferentes.';}
+ const count=level+3;
+ const motor=[q('C1','C','Reproduzir uma sequência',`Com um observador, veja ${count} toques alternados na mesa (esquerda, direita, esquerda...). Repita uma vez sem receber nova demonstração. Critério: executar a mesma ordem completa.`,['Critério atendido','Critério não atendido'],1,'Uma sequência pode ser aprendida dividindo-a em partes. A avaliação depende de observação declarada, não de um teste automático.',{observed:true}),q('C2','C','Posicionar objetos',`Sentado, coloque ${count} tampinhas grandes ou cartões dentro de ${count} círculos desenhados, sem ultrapassar as bordas ao soltar. Critério: todas as posições atendidas, sem limite de tempo.`,['Critério atendido','Critério não atendido'],1,'Use apenas objetos seguros e grandes. Registre adaptações; não aplique como diagnóstico motor.',{observed:true}),q('C3','C','Copiar uma organização','Um observador monta três cartões em forma de L. Após observar, copie a organização com outros três cartões. Critério: manter as relações de posição, permitindo deslocar o conjunto na mesa.', ['Critério atendido','Critério não atendido'],1,'Observe relações entre os cartões antes de movê-los. A tarefa também envolve aspectos espaciais.',{observed:true}),q('C4','C','Ajustar um movimento',`O observador aponta uma sequência de ${count} alvos grandes na mesa. Reproduza a sequência com o dedo. Critério: tocar os mesmos alvos na mesma ordem. Sem cronometrar.`,['Critério atendido','Critério não atendido'],1,'Antecipe a sequência e faça um movimento de cada vez. Dispositivo e adaptação precisam ser considerados.',{observed:true})];
+ const social=[q('I1','I','Conferir compreensão',`Uma pessoa do ${place} fica em silêncio depois da explicação. Qual atitude verifica melhor o que aconteceu?`,['Concluir que ela não tem interesse.','Repetir mais alto sem perguntar.','Perguntar como ela entendeu a tarefa e oferecer espaço para dúvidas.','Retirá-la do grupo.'],3,'O silêncio tem vários motivos. Perguntar permite verificar a compreensão; o cenário não mede toda a habilidade social.'),q('I2','I','Ouvir perspectivas','Duas pessoas discordam sobre como dividir uma tarefa. Qual proposta permite considerar ambas as perspectivas?',['Ouvir as razões de cada uma e negociar critérios de divisão.','Escolher quem fala mais alto.','Ignorar a divergência.','Afirmar que só existe uma opinião possível.'],1,'Escutar razões e negociar critérios oferece informações para uma decisão compartilhada.'),q('I3','I','Facilitar participação','Uma pessoa relata que não consegue acompanhar a discussão rápida. Qual ação atende diretamente à dificuldade relatada?',['Mandar que se esforce mais sem mudar nada.','Prosseguir sem ela.','Trocar de assunto sem explicação.','Combinar pausas e conferir se os pontos principais foram compreendidos.'],4,'A ação responde à dificuldade específica e verifica seu resultado.'),q('I4','I','Investigar um sinal','Alguém mudou a maneira de falar e parece desconfortável. Qual conclusão é mais adequada com as informações disponíveis?',['É possível saber exatamente o que sente.','É um sinal a esclarecer com cuidado, sem presumir a causa.','Com certeza está mentindo.','Não pode haver qualquer motivo.'],2,'Um sinal não revela sozinho a causa ou o estado interno da pessoa.')];
+ const self=[q('IN1','IN','Definir uma meta',`Para uma nova atividade do ${place}, qual meta permite conferir o resultado?`,['Ser perfeito em tudo.','Aprender qualquer coisa um dia.','Resolver dois exemplos e explicar os passos ao final da sessão.','Nunca ter dúvidas.'],3,'Uma meta observável permite conferir o que foi realizado; escolher a alternativa não comprova hábitos pessoais.'),q('IN2','IN','Revisar uma estratégia','Após várias tentativas com o mesmo procedimento, o erro continua. Qual ação testa melhor uma alternativa?',['Repetir sem examinar o erro.','Identificar em qual etapa o erro surge e testar outra estratégia.','Concluir que nunca conseguirá aprender.','Evitar conferir os resultados.'],2,'Localizar a dificuldade e testar uma mudança produz informação para ajustar a estratégia.'),q('IN3','IN','Separar previsão e evidência','Você previu acertar três situações e acertou duas. O que esses números permitem afirmar?',['Você não tem essa inteligência.','A teoria inteira foi refutada.','Sua previsão foi perfeita.','Você previu um acerto a mais nessa pequena aplicação.'],4,'É uma diferença entre previsão e resultado nesta aplicação, sem diagnóstico ou conclusão global sobre uma teoria.'),q('IN4','IN','Monitorar um plano','Qual registro ajuda mais a verificar se uma estratégia de aprendizagem funcionou?',['Guardar a previsão, o procedimento usado e os resultados obtidos.','Guardar apenas a impressão final.','Mudar a previsão depois de ver o gabarito.','Apagar tentativas que deram errado.'],1,'Preservar previsão e resultado permite acompanhar o processo sem reconstruir a história depois.')];
+ const nature=[q('N1','N','Classificar por um critério','Quatro folhas foram observadas. A e B têm borda lisa; C e D têm borda serrilhada. Qual divisão segue somente o critério de borda?',['A com C; B com D','A com B; C com D','Todas separadas por tamanho não informado','A com D; B com C'],2,'O agrupamento usa a única característica informada, sem inventar outras.'),q('N2','N','Ler uma mudança',`O número de plantas com folhas novas em uma área foi ${n}, ${n+2} e ${n+4} em três observações. Qual descrição usa somente esses dados?`,['Houve aumento de 2 entre observações sucessivas.','A chuva foi a única causa.','Todas as áreas terão o mesmo resultado.','Não ocorreu nenhuma mudança.'],1,'A sequência registra um aumento; ela não identifica sozinha a causa ou outras áreas.'),q('N3','N','Comparar evidências','Dois vasos da mesma espécie receberam quantidades diferentes de água, mas também ficaram em locais com iluminação diferente. Uma diferença no crescimento pode ser atribuída somente à água?',['Sim, com certeza.','A espécie não importa em nenhuma comparação.','Sim, sem precisar observar mais nada.','Não; a iluminação também mudou e pode contribuir.'],4,'Mais de uma condição mudou. Não é possível isolar o efeito de uma delas apenas com esses dados.'),q('N4','N','Consultar uma chave','Uma chave informa: “Se há seis pernas, grupo A; se há oito pernas, grupo B.” Um exemplar observado tem oito pernas. Qual classificação segue a chave?',['Grupo A','Os dois grupos ao mesmo tempo','Grupo B','Não há nenhuma informação útil'],3,'A classificação segue o critério observável fornecido, sem exigir um nome de espécie.')];
+ // Contextual variants remain exploratory. Shared items are not equating anchors.
+ const adapt=(bank,id,prompt,options,explanation,answer)=>{const t=bank.find(x=>x.id===id);Object.assign(t,{prompt,options,explanation});if(answer!==undefined)t.answer=answer;};
+ if(c==='superior'){
+  adapt(language,'L2','Um edital informa: “O relatório será aceito somente se incluir a descrição do método.” Um relatório foi aceito segundo esse edital. Qual informação decorre necessariamente da frase?',['O relatório inclui a descrição do método.','A descrição do método basta para aprovar qualquer relatório.','O relatório não precisa apresentar resultados.','Todos os relatórios foram aceitos.'],'A aceitação exige a descrição do método; a frase não afirma que essa seja a única exigência.');
+  adapt(language,'L3','Leia: “Os dados não permitem atribuir o efeito à intervenção, porque os grupos já diferiam antes da aplicação.” Qual é a conclusão apresentada?',['Os grupos foram sorteados.','A intervenção não teve qualquer efeito.','Os grupos eram equivalentes no início.','Os dados não permitem atribuir o efeito à intervenção.'],'A diferença inicial é a razão oferecida; a impossibilidade de atribuir o efeito é a conclusão.');
+  adapt(language,'L4','Um artigo afirma: “Não foi detectada diferença nesta amostra.” Qual paráfrase preserva a limitação dessa afirmação?',['Foi demonstrado que os efeitos são idênticos em toda a população.','A análise desta amostra não detectou diferença; isso não estabelece igualdade geral.','A diferença é necessariamente grande.','A coleta não ocorreu.'],'Ausência de detecção nesta análise não demonstra equivalência universal entre os efeitos.');
+  adapt(social,'I1','Uma integrante do grupo de pesquisa relata que suas dúvidas não entram na discussão. Qual ação reúne informação sobre a dificuldade sem presumir sua causa?',['Explicar novamente o plano sem ouvir exemplos.','Atribuir a dificuldade à pouca experiência da integrante.','Pedir um exemplo, ouvir sua compreensão e combinar como incluir as dúvidas.','Transferir suas tarefas antes de conversar.'],'O exemplo e a conferência de compreensão permitem investigar a dificuldade; escolher a alternativa não demonstra comportamento social real.');
+  adapt(social,'I2','Dois pesquisadores discordam sobre prazo e profundidade da análise. Qual proposta considera os interesses expressos por ambos?',['Explicitar prazo, qualidade mínima e recursos, negociar o escopo e registrar o acordo.','Decidir apenas pela proposta da pessoa mais experiente.','Calcular a média dos prazos sem discutir o trabalho necessário.','Pedir que cada pessoa siga um plano sem combinar a integração.'],'Negociar critérios explícitos permite tratar as restrições de ambos, em vez de presumir acordo.');
+  adapt(social,'I3','Numa reunião acadêmica, uma participante informa que precisa consultar os dados antes de responder. Qual ajuste atende diretamente a essa necessidade?',['Interpretar a pausa como discordância.','Pedir sua opinião mais rapidamente.','Decidir por ela para concluir a reunião.','Compartilhar os dados e combinar um momento para sua contribuição antes da decisão.'],'O ajuste oferece acesso à informação e oportunidade de participação antes da decisão.');
+  adapt(social,'I4','Após receber uma crítica metodológica, uma colega passa a responder brevemente. Qual leitura é sustentada apenas por essa observação?',['Ela rejeitou definitivamente o projeto.','Houve uma mudança a esclarecer em conversa, sem determinar sua causa.','A crítica foi tecnicamente incorreta.','Ela concordou integralmente com a crítica.'],'Uma mudança observável não identifica sozinha pensamentos, sentimentos ou causas.');
+  adapt(self,'IN1','Você dispõe de uma sessão para revisar o método de um artigo. Qual meta permite verificar o que foi realizado?',['Ler o máximo possível sem definir uma entrega.','Sentir-se totalmente preparado ao final.','Identificar a pergunta, a amostra e duas limitações, e escrever uma síntese ao final.','Evitar qualquer dificuldade durante a leitura.'],'A meta define uma entrega observável e delimitada; a escolha de uma resposta não demonstra hábitos reais.');
+  adapt(self,'IN2','Você relê uma solução e a reconhece, mas erra um problema semelhante sem consulta. Qual mudança testa melhor a capacidade de recuperar o procedimento?',['Aumentar apenas o número de releituras.','Resolver sem consulta, comparar os passos e registrar onde precisou de ajuda.','Avaliar o domínio apenas pela familiaridade do texto.','Escolher somente problemas já resolvidos corretamente.'],'A tentativa sem consulta produz evidência sobre recuperação e aplicação, além da familiaridade.');
+  adapt(self,'IN3','Antes de quatro problemas novos, você previu quatro acertos e obteve dois. Qual interpretação respeita esses dados?',['A autopercepção e o desempenho têm a mesma unidade.','Sua previsão foi exata porque houve acertos.','O resultado estabelece uma dificuldade permanente.','Houve previsão de dois acertos a mais, ou 50 pontos percentuais, nesta aplicação.'],'A diferença é 4 − 2 = 2 acertos em quatro; ela não estabelece um traço permanente.');
+  adapt(self,'IN4','Você quer examinar uma estratégia de estudo e dispõe de dois conjuntos de problemas de dificuldade ainda desconhecida. Qual plano preserva informações para uma análise cautelosa?',['Guardar previsão, estratégia, condições e respostas de cada conjunto, registrando a falta de equivalência.','Subtrair os totais e chamar qualquer diferença de efeito da estratégia.','Trocar a previsão ao descobrir a dificuldade.','Guardar apenas a melhor tentativa de cada conjunto.'],'Preservar condições e respostas permite examinar explicações alternativas; tarefas não equiparadas não fornecem ganho automaticamente.');
+  adapt(nature,'N1','Quatro folhas foram descritas: A e C têm borda lisa, B e D serrilhada. A e B são claras; C e D escuras. Qual divisão usa apenas a borda?',['A com B; C com D','A com C; B com D','A com D; B com C','Separar as claras das escuras'],'O critério solicitado é a borda; a cor é uma segunda característica e não deve comandar essa divisão.');
+  adapt(nature,'N3','Duas parcelas apresentaram crescimento diferente. Receberam fertilizantes distintos, mas também têm drenagem e exposição solar diferentes. O que essa comparação permite concluir?',['O fertilizante explica sozinho a diferença.','A drenagem não pode interferir no crescimento.','Uma diferença observada elimina a necessidade de novas medidas.','As condições variaram juntas; esse registro não isola o efeito do fertilizante.'],'A comparação tem condições concorrentes; um efeito isolado exigiria um desenho que tratasse essas diferenças.');
+  adapt(nature,'N4','Uma chave didática informa: borda serrilhada → C; borda lisa → conferir nervuras. Para borda lisa, nervuras paralelas → A e ramificadas → B. Uma folha lisa tem nervuras ramificadas. Qual grupo segue essa chave?',['A','C','B','Não é possível usar nenhuma etapa da chave'],'Primeiro siga a borda lisa e depois as nervuras ramificadas. Os grupos são os definidos na chave fornecida.');
+  adapt(spatial,'E3','Em uma grade 5 × 5, uma marca está na linha 2, coluna 1. As linhas são contadas de cima e as colunas da esquerda. Após reflexão em um espelho vertical, onde fica a marca?',['Linha 4, coluna 1','Linha 2, coluna 3','Linha 4, coluna 5','Linha 2, coluna 5'],'O espelho vertical mantém a linha e troca a coluna 1 pela 5.');spatial[2].visual='□ □ □ □ □\n● □ □ □ □\n□ □ □ □ □\n□ □ □ □ □\n□ □ □ □ □';
+  adapt(motor,'C3','Um observador monta quatro cartões: três lado a lado e o quarto abaixo do cartão central, formando um T. Após observar, copie com outros quatro cartões. Critério: manter as relações de posição, permitindo deslocar o conjunto na mesa.',['Critério atendido','Critério não atendido'],'Observe as relações entre os quatro cartões. A tarefa envolve memória e organização espacial, além da execução manual.');
+ }
+ if(c==='adultos'){
+  adapt(language,'L2','Uma instrução informa: “O pedido só será enviado após a confirmação do endereço.” O pedido foi enviado de acordo com a instrução. O que precisa ter ocorrido?',['O endereço foi confirmado.','Todo endereço confirmado gera um pedido.','O pedido já foi entregue.','Não havia outras exigências para o envio.'],'A confirmação é necessária para o envio, mas não se afirma que seja suficiente nem que a entrega já ocorreu.');
+  adapt(language,'L3','Leia: “O guia precisa ser atualizado, porque descreve uma etapa que já mudou.” Qual é a conclusão?',['A atualização já foi concluída.','Todas as etapas mudaram.','O guia nunca foi utilizado.','O guia precisa ser atualizado.'],'A mudança na etapa é a justificativa para a conclusão de atualizar o guia.');
+  adapt(language,'L4','Um aviso diz: “Alguns atendimentos exigem agendamento.” Qual frase mantém essa informação?',['Todos os atendimentos exigem agendamento.','Há atendimentos que exigem agendamento, sem afirmar isso de todos.','Nenhum atendimento exige agendamento.','Exatamente metade exige agendamento.'],'A palavra “alguns” não fixa a proporção nem estende a exigência a todos os atendimentos.');
+  adapt(social,'I1','Durante uma tarefa compartilhada, uma pessoa deixa de fazer perguntas e entrega algo diferente do combinado. Qual ação verifica melhor a compreensão do acordo?',['Repetir a instrução no mesmo formato, sem ouvir a pessoa.','Concluir que ela discordou de propósito.','Pedir que explique o que entendeu e conferir junto o ponto de divergência.','Passar a tarefa a outra pessoa sem conversar.'],'Conferir o entendimento reúne informação sobre a divergência sem presumir intenção.');
+  adapt(social,'I2','Duas pessoas da equipe precisam do mesmo recurso no mesmo horário. Qual encaminhamento considera a necessidade de ambas?',['Ouvir prazos e necessidades, combinar um critério de uso e confirmar o acordo.','Reservar para quem pediu com mais insistência.','Dividir o horário ao meio sem perguntar o tempo necessário.','Deixar que cada uma tente usar sem combinar.'],'A negociação parte das necessidades informadas e de um critério que ambas possam compreender.');
+  adapt(social,'I3','Uma pessoa informa que não consegue ler as instruções pequenas na tela. Qual ajuste responde diretamente à dificuldade relatada?',['Explicar que outras pessoas conseguem ler.','Manter o texto e apenas esperar mais tempo.','Realizar a escolha em nome dela sem consultar.','Oferecer texto ampliado ou outro formato acessível e conferir se ela consegue utilizá-lo.'],'O ajuste deve responder à barreira específica e ser conferido com a própria pessoa.');
+  adapt(social,'I4','Depois de uma alteração de horário, um colega passa a responder de forma breve. Qual interpretação usa apenas a informação disponível?',['Ele não quer mais colaborar.','A mudança pode ter diferentes motivos, que precisam ser esclarecidos com cuidado.','Ele aprovou a mudança de horário.','A alteração de horário é certamente a única causa.'],'A sequência de eventos não revela sozinha o motivo ou a experiência interna do colega.');
+  adapt(self,'IN1','Você tem um período curto para aprender uma tarefa nova. Qual objetivo permite conferir o que conseguiu fazer?',['Passar o período sem sentir dificuldade.','Entender tudo que existe sobre o assunto.','Executar duas etapas sem consultar e conferir o resultado ao final.','Comparar apenas o tempo gasto por outra pessoa.'],'Um objetivo delimitado e verificável permite comparar o plano com o resultado da própria tentativa.');
+  adapt(self,'IN2','Você repetiu a mesma tarefa e o erro reapareceu no mesmo ponto. Qual próximo passo produz informação para ajustar a estratégia?',['Repetir mais rápido sem registrar o ponto do erro.','Separar as etapas, conferir o ponto do erro e testar uma mudança por vez.','Mudar vários procedimentos sem anotar o que mudou.','Considerar apenas a lembrança da melhor tentativa.'],'Localizar a dificuldade e registrar uma mudança por vez ajuda a verificar o que foi tentado.');
+  adapt(self,'IN3','Você previu dois acertos em quatro situações e obteve três. Qual afirmação respeita esses números?',['Você superestimou o resultado em um acerto.','A previsão foi exata.','O resultado prova uma capacidade fixa.','O resultado superou a previsão em um acerto, ou 25 pontos percentuais, nesta aplicação.'],'Três acertos menos dois previstos é um acerto em quatro; isso não determina um nível permanente.');
+  adapt(self,'IN4','Você mudou a forma de praticar uma tarefa e quer acompanhar o resultado. Qual registro permite examinar o que ocorreu?',['Previsão, modo de praticar, condições da tentativa e resultados, inclusive os erros.','Somente o tempo da tentativa que terminou melhor.','Uma previsão escrita depois de conferir o resultado.','Apenas a impressão de ter ficado mais fácil.'],'Registrar plano, condições e resultados permite rever a estratégia e considerar diferenças entre tentativas.');
+  adapt(nature,'N1','Quatro sementes foram observadas: A e D têm superfície lisa; B e C rugosa. Qual divisão usa somente a superfície?',['A com B; C com D','A com D; B com C','A com C; B com D','Todas separadas por uma cor que não foi informada'],'A classificação usa a característica descrita, sem inventar cor ou espécie.');
+  adapt(nature,'N3','Duas plantas da mesma espécie cresceram de forma diferente. Uma recebeu mais água e ficou perto da janela; a outra recebeu menos água e ficou longe da janela. É possível atribuir a diferença somente à água?',['Sim, porque a espécie é a mesma.','Sim, porque toda planta responde da mesma maneira.','Sim, sem observar as condições de luz.','Não; a quantidade de água e a condição de luz mudaram juntas.'],'A comparação mistura duas condições; os registros não separam a contribuição de cada uma.');
+  adapt(nature,'N4','Uma chave didática diz: superfície lisa → conferir o formato; superfície rugosa → C. Entre as lisas, formato redondo → A e alongado → B. Uma semente é lisa e alongada. A qual grupo a chave a conduz?',['A','C','B','Não há nenhuma característica informada'],'Siga primeiro a superfície lisa e depois o formato alongado. A chave usa apenas as características fornecidas.');
+  adapt(spatial,'E3','Em uma grade 4 × 4, uma marca está na linha 3, coluna 1. As linhas são contadas de cima e as colunas da esquerda. Após reflexão em um espelho vertical, onde fica?',['Linha 2, coluna 1','Linha 3, coluna 2','Linha 2, coluna 4','Linha 3, coluna 4'],'A reflexão vertical mantém a linha 3 e troca a coluna 1 pela 4.');spatial[2].visual='□ □ □ □\n□ □ □ □\n● □ □ □\n□ □ □ □';
+  adapt(motor,'C3','Um observador monta quatro cartões formando um quadrado de duas linhas e duas colunas. Após observar, copie com outros quatro cartões. Critério: manter as relações de posição, permitindo deslocar o conjunto na mesa.',['Critério atendido','Critério não atendido'],'Observe a disposição antes de executar. O resultado depende da observação e também envolve organização espacial.');
+ }
+ return [...language,...logic,...spatial,...sound,...motor,...social,...self,...nature];
+}
+function validate(raw){
+ if(!raw||raw.schema!==SCHEMA||!validCohort(raw.publico)||raw.instrumento_versao!=='autopercepcao-40-0.3-'+raw.publico||raw.tarefas_versao!==VERSION+'-'+raw.publico)throw new Error('Registro ou versão incompatível com o instrumento ampliado.');
+ if(typeof raw.id!=='string'||!/^[A-Za-z0-9][A-Za-z0-9_-]{7,63}$/.test(raw.id))throw new Error('Identificador inválido.');
+ if(!['demonstracao','piloto','pesquisa'].includes(raw.etapa)||typeof raw.simulado!=='boolean'||raw.simulado&&raw.etapa!=='demonstracao')throw new Error('Etapa ou origem inválida.');
+ if(raw.participacao_aceita!==true||raw.faixa_permitida!==true)throw new Error('Confirme participação e faixa de acesso.');
+ for(const field of ['respostas','tarefas','previsoes','limitacoes'])if(!raw[field]||typeof raw[field]!=='object'||Array.isArray(raw[field]))throw new Error('Dicionário de respostas inválido.');
+ const mode=recordMode(raw),active=domainIds(mode),order=raw.ordem_dominios;
+ if(raw.percurso!==undefined&&!Object.hasOwn(MODES,raw.percurso))throw new Error('Percurso inválido.');
+ if(!Object.hasOwn(MODES,mode)||raw.percurso!==undefined&&(!Array.isArray(order)||order.length!==active.length||new Set(order).size!==active.length||order.some(k=>!active.includes(k)))||raw.percurso===undefined&&order!==undefined||raw.interface_versao===APP_VERSION&&raw.percurso===undefined)throw new Error('Percurso ou ordem das áreas inválidos.');
+ if(mode==='feira'&&raw.observador===true)throw new Error('O percurso de lógica não inclui observação corporal.');
+ const respostas={},tarefas={},previsoes={},limitacoes={};
+ for(const i of items(raw.publico)){const v=raw.respostas?.[i.id]??null;if(v!==null&&(!Number.isInteger(v)||v<1||v>5))throw new Error('Resposta inválida em '+i.id);if(!active.includes(i.domain)&&v!==null)throw new Error('Resposta fora do percurso.');respostas[i.id]=v;}
+ const bank=tasks(raw.publico);for(const t of bank){const v=raw.tarefas?.[t.id]??null;if(v!==null&&(!Number.isInteger(v)||v<0||v>t.options.length))throw new Error('Atividade inválida em '+t.id);if(t.observed&&v!==null&&raw.observador!==true)throw new Error('Atividades corporais exigem observação declarada.');if(!active.includes(t.domain)&&v!==null)throw new Error('Atividade fora do percurso.');tarefas[t.id]=v;}
+ for(const d of DOMAINS){const v=raw.previsoes?.[d.id]??null;if(v!==null&&(!Number.isInteger(v)||v<0||v>4))throw new Error('Previsão inválida.');if(!active.includes(d.id)&&v!==null)throw new Error('Previsão fora do percurso.');previsoes[d.id]=v;const reason=raw.limitacoes?.[d.id]??null;if(reason!==null&&!['sem_observador','sem_audio','adaptacao','nao_aplicado','fora_percurso'].includes(reason))throw new Error('Motivo de não aplicação inválido.');if(bank.some(t=>t.domain===d.id&&tarefas[t.id]===null)&&!reason)throw new Error('Informe por que alguma atividade não foi aplicada.');if(!active.includes(d.id)&&reason!=='fora_percurso'||active.includes(d.id)&&reason==='fora_percurso')throw new Error('Motivo incompatível com o percurso.');limitacoes[d.id]=reason;}
+ if(raw.lote!=null&&(typeof raw.lote!=='string'||!/^[A-Za-z0-9][A-Za-z0-9_-]{0,23}$/.test(raw.lote)))throw new Error('Lote inválido.');
+ const procedimentos=Object.fromEntries(['revisao','autorizacao','voluntario','guarda'].map(k=>[k,raw.procedimentos?.[k]===true]));if(raw.etapa!=='demonstracao'&&!Object.values(procedimentos).every(Boolean))throw new Error('Registro de campo sem declaração dos procedimentos.');
+ let aprendizagem=null;if(raw.aprendizagem!=null){const a=raw.aprendizagem;if(!['correcao','explicativo'].includes(a.group)||!['servidor','local'].includes(a.assignment)||![VERSION,TRANSFER_VERSION].includes(a.version)||!Array.isArray(a.answers)||a.answers.length!==4||!Array.from(a.answers).every(x=>x===null||Number.isInteger(x)&&x>=0&&x<=4))throw new Error('Aprendizagem inválida.');aprendizagem={version:a.version,group:a.group,assignment:a.assignment,answers:[...a.answers],completed:a.answers.every(x=>x!==null)};}
+ const result={schema:SCHEMA,id:raw.id,publico:raw.publico,instrumento_versao:raw.instrumento_versao,tarefas_versao:raw.tarefas_versao,etapa:raw.etapa,simulado:raw.simulado,lote:raw.lote??null,criado_em:typeof raw.criado_em==='string'&&Number.isFinite(Date.parse(raw.criado_em))?raw.criado_em:null,participacao_aceita:true,faixa_permitida:true,observador:raw.observador===true,procedimentos,respostas,tarefas,previsoes,limitacoes,aprendizagem};
+ if(raw.interface_versao!==undefined){if(typeof raw.interface_versao!=='string'||!/^\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(raw.interface_versao))throw new Error('Versão da interface inválida.');result.interface_versao=raw.interface_versao;}if(raw.percurso!==undefined){result.percurso=mode;result.ordem_dominios=[...order];}return result;
+}
+function profile(raw){const r=validate(raw),bank=tasks(r.publico);return DOMAINS.map(d=>{const self=items(r.publico).filter(i=>i.domain===d.id).map(i=>r.respostas[i.id]),attempts=bank.filter(t=>t.domain===d.id),values=attempts.map(t=>r.tarefas[t.id]),complete=values.every(x=>x!==null),correct=complete?attempts.filter(t=>r.tarefas[t.id]===t.answer).length:null,mean=self.every(x=>x!==null)?self.reduce((a,b)=>a+b,0)/5:null;return {...d,included:domainIds(recordMode(r)).includes(d.id),mean,selfAnswered:self.filter(x=>x!==null).length,endorsed:mean===null?null:self.filter(x=>x>=4).length,scalePercent:mean===null?null:(mean-1)*25,correct,answered:values.filter(x=>x!==null).length,performance:correct===null?null:correct*25,prediction:r.previsoes[d.id],predictionPercent:r.previsoes[d.id]===null?null:r.previsoes[d.id]*25,gap:correct===null||r.previsoes[d.id]===null?null:(r.previsoes[d.id]-correct)*25};});}
+function transferScore(r){if(!r.aprendizagem?.completed)return null;return tasks(r.publico,true,r.aprendizagem.version).filter((t,i)=>r.aprendizagem.answers[i]===t.answer).length;}
+function rank(a){const ix=a.map((v,i)=>({v,i})).sort((x,y)=>x.v-y.v),out=[];for(let i=0;i<ix.length;){let j=i+1;while(j<ix.length&&ix[j].v===ix[i].v)j++;for(let k=i;k<j;k++)out[ix[k].i]=(i+j+1)/2;i=j;}return out;}
+function rho(x,y){if(x.length<3)return null;const a=rank(x),b=rank(y),mean=v=>v.reduce((p,q)=>p+q,0)/v.length,ma=mean(a),mb=mean(b);let cov=0,va=0,vb=0;for(let i=0;i<a.length;i++){cov+=(a[i]-ma)*(b[i]-mb);va+=(a[i]-ma)**2;vb+=(b[i]-mb)**2;}return va&&vb?Math.max(-1,Math.min(1,cov/Math.sqrt(va*vb))):null;}
+function analyze(records,cohort,stage,batch='',interfaceVersion='',mode='completo'){
+ const rows=records.map(validate).filter(r=>r.publico===cohort&&r.etapa===stage&&recordMode(r)===mode&&(!batch||r.lote===batch)&&(!interfaceVersion||recordInterface(r)===interfaceVersion)),profiles=rows.map(profile),defs=DOMAINS.filter(d=>domainIds(mode).includes(d.id)),avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+ return {n:rows.length,mode,domains:defs.map(d=>{const p=profiles.map(x=>x.find(y=>y.id===d.id)),pairs=p.filter(x=>x.mean!==null&&x.correct!==null),cal=p.filter(x=>x.gap!==null);return {...d,n:pairs.length,selfMean:avg(pairs.map(x=>x.mean)),performance:avg(pairs.map(x=>x.performance)),rho:rho(pairs.map(x=>x.mean),pairs.map(x=>x.correct)),calibrationN:cal.length,gapMean:avg(cal.map(x=>x.gap)),absoluteGap:avg(cal.map(x=>Math.abs(x.gap))),missing:rows.length-p.filter(x=>x.correct!==null).length};}),matrix:defs.map(a=>defs.map(b=>{const ps=profiles.map(x=>[x.find(d=>d.id===a.id),x.find(d=>d.id===b.id)]).filter(x=>x[0].correct!==null&&x[1].correct!==null);return {n:ps.length,rho:rho(ps.map(x=>x[0].correct),ps.map(x=>x[1].correct))};})),learning:['correcao','explicativo'].map(group=>{const assigned=rows.filter(r=>r.aprendizagem?.group===group&&(stage==='demonstracao'||r.aprendizagem.assignment==='servidor')),scores=assigned.map(transferScore).filter(x=>x!==null);return {group,n:assigned.length,complete:scores.length,missing:assigned.length-scores.length,mean:avg(scores),completion:assigned.length?scores.length/assigned.length*100:null,accuracy:scores.length?avg(scores)*25:null,distribution:[0,1,2,3,4].map(k=>scores.filter(x=>x===k).length)};})};
+}
+function fingerprint(r){const value=validate(r);delete value.criado_em;delete value.aprendizagem;return JSON.stringify(value);}
+function bundle(records){return {schema:'percepcao-lote-2.0',version:VERSION,exportado_em:new Date().toISOString(),registros:records.map(validate)};}
+function csv(records){const fields=['schema','interface_versao','percurso','ordem_dominios','id','publico','instrumento_versao','tarefas_versao','etapa','lote','simulado','criado_em','observador','revisao','autorizacao','voluntario','guarda',...DOMAINS.flatMap(d=>Array.from({length:5},(_,i)=>d.id+(i+1))),...DOMAINS.flatMap(d=>Array.from({length:4},(_,i)=>'T_'+d.id+(i+1))),...DOMAINS.map(d=>'previsao_'+d.id),...DOMAINS.map(d=>'limite_'+d.id),'feedback','alocacao','aprendizagem_versao','P1','P2','P3','P4'];const cell=v=>{let s=v==null?'':String(v);if(/^[=+@-]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';};return '\uFEFF'+[fields.join(','),...records.map(validate).map(r=>{const row={...r,...r.procedimentos,...r.respostas,...Object.fromEntries(Object.entries(r.tarefas).map(([k,v])=>['T_'+k,v])),...Object.fromEntries(Object.entries(r.previsoes).map(([k,v])=>['previsao_'+k,v])),...Object.fromEntries(Object.entries(r.limitacoes).map(([k,v])=>['limite_'+k,v])),feedback:r.aprendizagem?.group,alocacao:r.aprendizagem?.assignment,aprendizagem_versao:r.aprendizagem?.version,...Object.fromEntries([1,2,3,4].map(i=>['P'+i,r.aprendizagem?.answers[i-1]]))};return fields.map(k=>cell(row[k])).join(',');})].join('\r\n');}
+
+const PRACTICE={
+ L:'Leia um texto curto. Escreva uma conclusão e indique a frase que a sustenta; depois confira se acrescentou alguma suposição.',
+ LM:'Resolva uma nova situação com uma regra semelhante. Anote cada etapa e tente encontrar um exemplo que contrarie sua conclusão.',
+ E:'Desenhe uma grade, marque uma posição e preveja um giro ou reflexão. Confira a transformação no papel antes de tentar outra.',
+ M:'Produza dois ritmos curtos com palmas ou sons. Compare um atributo por vez e tente reproduzir a sequência; registre as condições de escuta.',
+ C:'Com um observador, pratique uma sequência curta sentado e com objetos seguros. Combine o critério antes e registre adaptações e resultado.',
+ I:'Em dupla, simulem uma instrução ambígua. Uma pessoa explica, a outra diz o que entendeu; confiram juntos onde a mensagem mudou.',
+ IN:'Escolha uma pequena meta observável, registre o que espera conseguir e execute. Compare previsão e resultado para decidir o próximo ajuste.',
+ N:'Observe folhas, fotos ou sementes. Classifique por um critério explícito, justifique os grupos e teste se outra pessoa reproduz sua classificação.'
+};
+function recordInterface(r){return r.interface_versao||'anterior';}
+function validateDraft(raw,expected){
+ if(!raw||raw.schema!=='percepcao-rascunho-2.3'||raw.app_version!==APP_VERSION||raw.origin!==expected.origin||raw.code!==expected.code)throw new Error('Este rascunho pertence a outro link, aparelho de acesso ou versão.');
+ const r=validate(raw.record),p=raw.progress;
+ if(r.interface_versao!==APP_VERSION||r.aprendizagem!==null||!p||typeof p!=='object'||Array.isArray(p)||!['self','tasks'].includes(p.phase)||!Number.isInteger(p.index)||p.index<0||p.index>=recordOrder(r).length||typeof p.opened!=='boolean'||![0,1].includes(p.taskPage)||p.phase==='self'&&(p.opened||p.taskPage!==0)||!p.opened&&p.taskPage!==0)throw new Error('Progresso do rascunho inválido.');
+ const bank=tasks(r.publico),currentDomain=recordOrder(r)[p.index];
+ if(p.phase==='self'&&(Object.values(r.tarefas).some(v=>v!==null)||Object.values(r.previsoes).some(v=>v!==null)||r.observador))throw new Error('Atividades em rascunho de autopercepção.');
+ if(p.phase==='tasks'&&bank.some(t=>(recordOrder(r).indexOf(t.domain)>p.index||t.domain===currentDomain&&!p.opened)&&r.tarefas[t.id]!==null))throw new Error('Respostas fora do progresso registrado.');
+ if(typeof raw.updated_at!=='string'||!Number.isFinite(Date.parse(raw.updated_at)))throw new Error('Data do rascunho inválida.');
+ return {schema:raw.schema,app_version:APP_VERSION,origin:raw.origin,code:raw.code,updated_at:raw.updated_at,record:r,progress:{phase:p.phase,index:p.index,opened:p.opened,taskPage:p.taskPage}};
+}
+function actionPlan(records,cohort,mode='completo'){
+ if(!validCohort(cohort))throw new Error('Público inválido.');
+ const rows=records.map(validate);
+ if(rows.some(r=>r.publico!==cohort)||new Set(rows.map(r=>r.etapa+'|'+r.tarefas_versao+'|'+r.instrumento_versao+'|'+recordInterface(r)+'|'+recordMode(r))).size>1)throw new Error('Separe públicos, etapas e versões para propor atividades.');
+ const bank=tasks(cohort);
+ return DOMAINS.filter(d=>domainIds(rows.length?recordMode(rows[0]):mode).includes(d.id)).map(d=>{
+  const stats=bank.filter(t=>t.domain===d.id).map(t=>{const applied=rows.filter(r=>r.tarefas[t.id]!==null),correct=applied.filter(r=>r.tarefas[t.id]===t.answer).length;return {id:t.id,title:t.title,applied:applied.length,correct,missing:rows.length-applied.length,rate:applied.length?correct/applied.length:null};});
+  const eligible=stats.filter(t=>t.applied>=3).sort((a,b)=>a.rate-b.rate||a.id.localeCompare(b.id)),focus=eligible[0]||null;
+  return {...d,n:rows.length,focus,practice:PRACTICE[d.id],note:!focus?'Ainda não há três aplicações por atividade para sugerir uma prioridade descritiva. Confira condições e enunciados.':focus.rate===1?'Todos os registros aplicados atenderam a este critério. Revise a dificuldade e experimente situações mais variadas.':'Revise o enunciado e as condições antes de atribuir o resultado a uma dificuldade de aprendizagem.'};
+ });
+}
+
+function sameSelection(records){
+ const rows=records.map(validate);
+ if(new Set(rows.map(r=>[r.publico,r.etapa,r.instrumento_versao,r.tarefas_versao,recordInterface(r),recordMode(r)].join('|'))).size>1)throw new Error('Separe público, etapa, instrumentos, interface e percurso.');
+ return rows;
+}
+function spearmanDetail(records,domain){
+ if(!DOMAINS.some(d=>d.id===domain))throw new Error('Área inválida.');
+ const rows=sameSelection(records),pairs=rows.map((r,i)=>({case:i+1,...profile(r).find(d=>d.id===domain)})).filter(d=>d.included&&d.mean!==null&&d.correct!==null),x=pairs.map(d=>d.mean),y=pairs.map(d=>d.correct),rx=rank(x),ry=rank(y),center=(pairs.length+1)/2;
+ let cross=0,squareX=0,squareY=0;
+ const cases=pairs.map((d,i)=>{const dx=rx[i]-center,dy=ry[i]-center;cross+=dx*dy;squareX+=dx*dx;squareY+=dy*dy;return {case:d.case,self:d.mean,correct:d.correct,rankSelf:rx[i],rankCorrect:ry[i],cross:dx*dy};});
+ return {n:pairs.length,excluded:rows.length-pairs.length,cases,rankMean:center,cross,squareX,squareY,rho:rho(x,y)};
+}
+function calibrationMatrix(records,domain){
+ if(!DOMAINS.some(d=>d.id===domain))throw new Error('Área inválida.');
+ const rows=sameSelection(records),cells=Array.from({length:5},()=>Array(5).fill(0));let n=0,totalError=0,absoluteError=0,missingPrediction=0,missingPerformance=0;
+ for(const r of rows){const d=profile(r).find(x=>x.id===domain);if(!d.included)continue;if(d.prediction===null)missingPrediction++;if(d.correct===null)missingPerformance++;if(d.prediction===null||d.correct===null)continue;cells[d.prediction][d.correct]++;n++;totalError+=d.prediction-d.correct;absoluteError+=Math.abs(d.prediction-d.correct);}
+ return {cells,n,excluded:rows.length-n,missingPrediction,missingPerformance,error:n?totalError/n:null,absolute:n?absoluteError/n:null};
+}
+function permutationTest(control,explanation,{iterations=20000,seed=20261027}={}){
+ if(!Array.isArray(control)||!Array.isArray(explanation)||!control.length||!explanation.length||[...control,...explanation].some(x=>!Number.isInteger(x)||x<0||x>4)||!Number.isInteger(iterations)||iterations<1000||iterations>50000||!Number.isInteger(seed))throw new Error('Dados ou parâmetros de permutação inválidos.');
+ const values=[...control,...explanation],n=values.length,k=Math.min(control.length,explanation.length),sum=values.reduce((a,b)=>a+b,0),effect=explanation.reduce((a,b)=>a+b,0)/explanation.length-control.reduce((a,b)=>a+b,0)/control.length,threshold=Math.abs(effect)-1e-12;
+ let combinations=1;for(let i=1;i<=Math.min(k,n-k);i++){combinations*= (n-i+1)/i;if(combinations>50000)break;}
+ let extreme=0,count=0;
+ if(combinations<=50000){
+  function visit(start,left,selectedSum){if(left===0){count++;if(Math.abs((sum-selectedSum)/(n-k)-selectedSum/k)>=threshold)extreme++;return;}for(let i=start;i<=n-left;i++)visit(i+1,left-1,selectedSum+values[i]);}
+  visit(0,k,0);return {method:'exato',effect,p:extreme/count,permutations:count,extreme,seed:null,mcse:null};
+ }
+ let state=seed>>>0;
+ function random(){state=(state+0x6D2B79F5)>>>0;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;}
+ const pool=new Uint32Array(n);
+ for(let b=0;b<iterations;b++){for(let i=0;i<n;i++)pool[i]=i;let selectedSum=0;for(let i=0;i<k;i++){const j=i+Math.floor(random()*(n-i));[pool[i],pool[j]]=[pool[j],pool[i]];selectedSum+=values[pool[i]];}if(Math.abs((sum-selectedSum)/(n-k)-selectedSum/k)>=threshold)extreme++;}
+ const p=(extreme+1)/(iterations+1);return {method:'monte_carlo',effect,p,permutations:iterations,extreme,seed:seed>>>0,mcse:Math.sqrt(p*(1-p)/iterations)};
+}
+function feedbackInference(records,{verifiedServer=false}={}){
+ const rows=sameSelection(records),simulation=rows.length>0&&rows[0].etapa==='demonstracao',groups=['correcao','explicativo'].map(group=>{const a=rows.filter(r=>r.aprendizagem?.group===group&&(simulation||r.aprendizagem.assignment==='servidor')),scores=a.map(transferScore).filter(x=>x!==null);return {group,n:a.length,scores,missing:a.length-scores.length};});
+ const result={simulation,groups:groups.map(({scores,...g})=>g),test:null,bounds:null,status:'aguardando',reason:'A comparação exige participantes atribuídos aos dois grupos.'};
+ if(!groups.every(g=>g.n))return result;
+ if(new Set(rows.filter(r=>r.aprendizagem).map(r=>r.aprendizagem.version)).size>1)return {...result,status:'versoes',reason:'Separe as versões do complemento de lógica para comparar o feedback.'};
+ if(new Set(rows.map(r=>r.lote)).size>1)return {...result,status:'lotes',reason:'Selecione um único lote para o teste de hipótese.'};
+ if(!simulation&&(!verifiedServer||rows.some(r=>r.aprendizagem?.assignment!=='servidor')))return {...result,status:'origem',reason:'O teste de campo exige registros carregados da base central com alocação pelo servidor. Importações ficam na análise descritiva.'};
+ if(groups.some(g=>g.missing)){
+  const range=groups.map(g=>{const sum=g.scores.reduce((a,b)=>a+b,0);return {min:sum/g.n,max:(sum+4*g.missing)/g.n};});
+  return {...result,status:'incompleto',bounds:[range[1].min-range[0].max,range[1].max-range[0].min],reason:'Há desfechos ausentes após a atribuição. O painel mostra conclusões e cenários extremos; o teste automático aguarda os desfechos para preservar a comparação dos grupos sorteados.'};
+ }
+ return {...result,status:'calculado',reason:simulation?'Demonstração matemática. Este p-valor não é resultado de pesquisa.':'Teste bilateral de permutação sob a hipótese de efeito individual nulo do feedback; estatística: diferença de médias nas situações novas.',test:permutationTest(groups[0].scores,groups[1].scores)};
+}
+
+const api={MODES,recordMode,recordOrder,domainIds,randomOrder,rank,spearmanDetail,calibrationMatrix,permutationTest,feedbackInference,APP_VERSION,PRACTICE,recordInterface,validateDraft,actionPlan,VERSION,TRANSFER_VERSION,SCHEMA,COHORTS,DOMAINS,ITEMS,STRATEGIES,items,tasks,validate,profile,analyze,rho,transferScore,fingerprint,bundle,csv};root.ResearchV2=Object.freeze(api);if(typeof module!=='undefined'&&module.exports)module.exports=api;
+})(globalThis);
+</script>
+<script>(function(){
+'use strict';
+const V=ResearchV2,$=id=>document.getElementById(id),esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=(v,d=2)=>v===null||v===undefined||Number.isNaN(v)?'—':Number(v).toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const STORAGE_KEY='percepcao-painel-registros-2.3';
+let allRecords=[],conflicts=[],duplicateContentWarnings=[];
+
+function saveFile(value,name,type='application/json;charset=utf-8'){
+ const url=URL.createObjectURL(new Blob([typeof value==='string'?value:JSON.stringify(value,null,2)],{type})),a=document.createElement('a');
+ a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+$('font').addEventListener('click',()=>{$('font').setAttribute('aria-pressed',String(document.documentElement.classList.toggle('large-text')));});
+
+function persistLocal(){
+ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(allRecords));}catch{}
+}
+
+function loadLocal(){
+ try{
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return;
+  const parsed=JSON.parse(raw);
+  if(Array.isArray(parsed)){
+   for(const item of parsed){try{allRecords.push(V.validate(item));}catch{}}
+  }
+ }catch{}
+}
+
+function ingestRecords(candidates,sourceLabel='arquivo'){
+ let added=0,updated=0,dupIgnored=0,invalid=0;
+ const byId=new Map(allRecords.map((r,idx)=>[r.id,{r,idx}]));
+ const byFp=new Map(allRecords.map(r=>[V.fingerprint(r),r.id]));
+ for(const raw of candidates){
+  let r;
+  try{r=V.validate(raw);}catch(err){invalid++;continue;}
+  const fp=V.fingerprint(r);
+  if(byId.has(r.id)){
+   const existing=byId.get(r.id).r;
+   const existingFp=V.fingerprint(existing);
+   if(existingFp===fp){
+    if(!existing.aprendizagem?.completed&&r.aprendizagem?.completed){
+     allRecords[byId.get(r.id).idx]=r;
+     byId.set(r.id,{r,idx:byId.get(r.id).idx});
+     updated++;
+    }else{
+     dupIgnored++;
+    }
+   }else{
+    conflicts.push({id:r.id,source:sourceLabel,existingCreated:existing.criado_em,newCreated:r.criado_em,note:'Mesmo código ID com respostas principais diferentes (preservado para conferência).'});
+   }
+   continue;
+  }
+  if(byFp.has(fp)&&byFp.get(fp)!==r.id){
+   duplicateContentWarnings.push({id1:byFp.get(fp),id2:r.id,source:sourceLabel,note:'Respostas principais idênticas com códigos ID distintos.'});
+  }
+  byId.set(r.id,{r,idx:allRecords.length});
+  byFp.set(fp,r.id);
+  allRecords.push(r);
+  added++;
+ }
+ persistLocal();
+ return {added,updated,dupIgnored,invalid};
+}
+
+function autoSelectFilters(){
+ if(!allRecords.length)return;
+ const nonSim=allRecords.filter(r=>!r.simulado);
+ const target=nonSim.length?nonSim[nonSim.length-1]:allRecords[allRecords.length-1];
+ $('filter-origin').value=target.simulado?'simulados':'reais';
+ $('filter-cohort').value=target.publico;
+ $('filter-mode').value=V.recordMode(target);
+ $('filter-stage').value=target.etapa;
+ $('filter-interface').value=V.recordInterface(target);
+ if(target.aprendizagem?.version)$('filter-transfer').value=target.aprendizagem.version;
+}
+
+$('file-input').addEventListener('change',async e=>{
+ const files=Array.from(e.target.files||[]);
+ if(!files.length)return;
+ let totalAdded=0,totalUpdated=0,totalDup=0,totalInvalid=0;
+ for(const file of files){
+  try{
+   const text=await file.text();
+   const parsed=JSON.parse(text);
+   const list=Array.isArray(parsed)?parsed:Array.isArray(parsed?.registros)?parsed.registros:[parsed];
+   const res=ingestRecords(list,file.name);
+   totalAdded+=res.added;totalUpdated+=res.updated;totalDup+=res.dupIgnored;totalInvalid+=res.invalid;
+  }catch{
+   totalInvalid++;
+  }
+ }
+ e.target.value='';
+ autoSelectFilters();
+ updateImportStatus(`Importação concluída: ${totalAdded} adicionado(s), ${totalUpdated} complementado(s), ${totalDup} duplicata(s) idêntica(s) ignorada(s), ${totalInvalid} inválido(s). Total no painel: ${allRecords.length}.`);
+ renderDashboard();
+});
+
+function generateSimulatedDataset(){
+ const cohort=$('filter-cohort').value,mode=$('filter-mode').value,active=V.domainIds(mode),bank=V.tasks(cohort),transferBank=V.tasks(cohort,true,V.TRANSFER_VERSION);
+ let seed=20261029;
+ const rand=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
+ const simRecords=[];
+ for(let i=0;i<20;i++){
+  const ability=Math.min(1,Math.max(0,(i/19)*0.75+rand()*0.25));
+  const respostas=Object.fromEntries(V.items(cohort).map(item=>{
+   if(!active.includes(item.domain))return [item.id,null];
+   const base=Math.round(2+ability*2.5+(rand()-0.5)*1.4);
+   return [item.id,Math.min(5,Math.max(1,base))];
+  }));
+  const observador=mode==='completo';
+  const tarefas=Object.fromEntries(bank.map(t=>{
+   if(!active.includes(t.domain))return [t.id,null];
+   const pass=rand()<(0.35+ability*0.55);
+   const wrongOpt=((t.answer)%t.options.length)+1;
+   return [t.id,pass?t.answer:wrongOpt];
+  }));
+  const previsoes=Object.fromEntries(V.DOMAINS.map(d=>{
+   if(!active.includes(d.id))return [d.id,null];
+   const pred=Math.min(4,Math.max(0,Math.round(1.5+ability*2.2+(rand()-0.35)*1.2)));
+   return [d.id,pred];
+  }));
+  const limitacoes=Object.fromEntries(V.DOMAINS.map(d=>[d.id,active.includes(d.id)?null:'fora_percurso']));
+  const group=i%2===0?'explicativo':'correcao';
+  const boost=group==='explicativo'?0.28:0.0;
+  const answers=transferBank.map(t=>{
+   const pass=rand()<(0.35+ability*0.4+boost);
+   const wrongOpt=((t.answer)%t.options.length)+1;
+   return pass?t.answer:wrongOpt;
+  });
+  simRecords.push({
+   schema:V.SCHEMA,
+   id:'sim-'+cohort+'-'+mode+'-'+String(i+1).padStart(3,'0'),
+   publico:cohort,
+   instrumento_versao:'autopercepcao-40-0.3-'+cohort,
+   tarefas_versao:V.VERSION+'-'+cohort,
+   interface_versao:V.APP_VERSION,
+   percurso:mode,
+   ordem_dominios:V.domainIds(mode),
+   etapa:'demonstracao',
+   simulado:true,
+   lote:'demo-simulado',
+   criado_em:new Date(Date.now()-i*60000).toISOString(),
+   participacao_aceita:true,
+   faixa_permitida:true,
+   observador,
+   procedimentos:{revisao:false,autorizacao:false,voluntario:false,guarda:false},
+   respostas,
+   tarefas,
+   previsoes,
+   limitacoes,
+   aprendizagem:{version:V.TRANSFER_VERSION,group,assignment:'local',answers,completed:true}
+  });
+ }
+ return simRecords;
+}
+
+$('load-demo').addEventListener('click',()=>{
+ $('filter-stage').value='demonstracao';
+ $('filter-origin').value='simulados';
+ $('filter-interface').value=V.APP_VERSION;
+ $('filter-transfer').value=V.TRANSFER_VERSION;
+ const sim=generateSimulatedDataset();
+ const res=ingestRecords(sim,'simulacao-interna');
+ updateImportStatus(`Exemplo simulado carregado (${res.added} novos registros simulados para ${V.COHORTS[$('filter-cohort').value]} · ${V.MODES[$('filter-mode').value]}). Estes dados estão marcados com simulado=true e etapa=demonstracao.`);
+ renderDashboard();
+});
+
+$('clear-data').addEventListener('click',()=>{
+ if(!allRecords.length&&!conflicts.length)return;
+ if(!confirm('Limpar todos os registros importados e simulados desta sessão do painel?'))return;
+ allRecords=[];conflicts=[];duplicateContentWarnings=[];
+ try{localStorage.removeItem(STORAGE_KEY);}catch{}
+ updateImportStatus('Painel limpo. Nenhum registro carregado.');
+ renderDashboard();
+});
+
+function updateImportStatus(msg){
+ $('import-status').textContent=msg;
+ const totalAlerts=conflicts.length+duplicateContentWarnings.length;
+ $('conflicts-box').hidden=totalAlerts===0;
+ if(totalAlerts>0){
+  $('conflicts-summary').textContent=`Conflitos e alertas de conferência (${totalAlerts})`;
+  const rows=[
+   ...conflicts.map(c=>`<tr><td>Conflito de ID</td><td><code>${esc(c.id)}</code></td><td>${esc(c.source)}</td><td>${esc(c.note)}</td></tr>`),
+   ...duplicateContentWarnings.map(w=>`<tr><td>Conteúdo idêntico</td><td><code>${esc(w.id1)}</code> / <code>${esc(w.id2)}</code></td><td>${esc(w.source)}</td><td>${esc(w.note)}</td></tr>`)
+  ];
+  $('conflicts-list').innerHTML=`<table><thead><tr><th>Tipo</th><th>Código(s)</th><th>Origem</th><th>Observação</th></tr></thead><tbody>${rows.join('')}</tbody></table>`;
+ }
+}
+
+function getFilteredRecords(){
+ const cohort=$('filter-cohort').value,mode=$('filter-mode').value,stage=$('filter-stage').value,origin=$('filter-origin').value,iface=$('filter-interface').value,transferVer=$('filter-transfer').value,batch=$('filter-batch').value.trim();
+ return allRecords.filter(r=>
+  r.publico===cohort&&
+  V.recordMode(r)===mode&&
+  r.etapa===stage&&
+  (origin==='simulados'?r.simulado===true:r.simulado===false)&&
+  (!iface||V.recordInterface(r)===iface)&&
+  (!batch||(r.lote||'')===batch)&&
+  (transferVer==='todas'||!r.aprendizagem||r.aprendizagem.version===transferVer)
+ );
+}
+
+function populateDetailDomains(mode){
+ const active=V.DOMAINS.filter(d=>V.domainIds(mode).includes(d.id));
+ const current=$('detail-domain').value;
+ $('detail-domain').innerHTML=active.map(d=>`<option value="${d.id}">${esc(d.label)} (${d.id})</option>`).join('');
+ if(active.some(d=>d.id===current))$('detail-domain').value=current;
+}
+
+function renderDomainRow(d){
+ const ecText=d.gapMean===null?'—':(d.gapMean>0?'+':'')+fmt(d.gapMean,1)+' p.p.';
+ const eamText=d.absoluteGap===null?'—':fmt(d.absoluteGap,1)+' p.p.';
+ const tag=d.observed?'Observação declarada':d.proxy?'Cenário indireto':'Gabarito objetivo';
+ return `<tr>
+  <th scope="row">${esc(d.label)} (${d.id})<small class="fine">${esc(d.measure)} · ${tag}</small></th>
+  <td><strong>${d.n}</strong> pares<small class="fine">${d.missing} sem total</small></td>
+  <td>${d.selfMean===null?'—':fmt(d.selfMean,2)+' / 5'}</td>
+  <td>${d.performance===null?'—':fmt(d.performance,1)+'%'}<div class="v2-meter"><span style="width:${d.performance||0}%"></span></div></td>
+  <td><strong>${d.rho===null?'—':fmt(d.rho,3)}</strong></td>
+  <td>${d.calibrationN} pares</td>
+  <td>${ecText}</td>
+  <td>${eamText}</td>
+ </tr>`;
+}
+
+function renderSpearmanAndCalibration(rows,domainId){
+ const dObj=V.DOMAINS.find(d=>d.id===domainId)||V.DOMAINS[1];
+ const sp=V.spearmanDetail(rows,dObj.id);
+ $('detail-rho').textContent=sp.rho===null?'—':fmt(sp.rho,3);
+ $('detail-spearman-summary').textContent=`Área ${dObj.label}: ${sp.n} par(es) completo(s) e ${sp.excluded} registro(s) sem par completo. Posto central = ${fmt(sp.rankMean,1)}; Σ(ΔR_x·ΔR_y) = ${fmt(sp.cross,2)}; Σ(ΔR_x²) = ${fmt(sp.squareX,2)}; Σ(ΔR_y²) = ${fmt(sp.squareY,2)}.`;
+ $('rank-tbody').innerHTML=sp.cases.length?sp.cases.map(c=>`<tr>
+  <td>#${c.case}</td>
+  <td>${fmt(c.self,2)}</td>
+  <td>${c.correct} / 4</td>
+  <td>${fmt(c.rankSelf,1)}</td>
+  <td>${fmt(c.rankCorrect,1)}</td>
+  <td>${fmt(c.cross,2)}</td>
+ </tr>`).join(''):`<tr><td colspan="6" class="v2-empty">Nenhum par completo disponível nesta área.</td></tr>`;
+
+ const cal=V.calibrationMatrix(rows,dObj.id);
+ const errPts=cal.error===null?'—':(cal.error>0?'+':'')+fmt(cal.error*25,1)+' p.p. ('+fmt(cal.error,2)+' acerto)';
+ const absPts=cal.absolute===null?'—':fmt(cal.absolute*25,1)+' p.p. ('+fmt(cal.absolute,2)+' acerto)';
+ $('detail-cal-summary').textContent=`Área ${dObj.label}: ${cal.n} par(es) de previsão e resultado (${cal.missingPrediction} sem previsão; ${cal.missingPerformance} sem total nas tarefas). Erro direcional médio: ${errPts} · Erro absoluto médio (EAM): ${absPts}.`;
+ $('cal-matrix-tbody').innerHTML=[0,1,2,3,4].map(pred=>`<tr>
+  <th scope="row">Previu ${pred} (${pred*25}%)</th>
+  ${[0,1,2,3,4].map(actual=>`<td class="${pred===actual?'v2-diagonal':''}">${cal.cells[pred][actual]}</td>`).join('')}
+ </tr>`).join('');
+}
+
+function renderDashboard(){
+ const cohort=$('filter-cohort').value,mode=$('filter-mode').value,stage=$('filter-stage').value,iface=$('filter-interface').value,batch=$('filter-batch').value.trim();
+ populateDetailDomains(mode);
+ const rows=getFilteredRecords();
+ const hasData=rows.length>0;
+ $('empty-panel').hidden=hasData;
+ $('dashboard-content').hidden=!hasData;
+ $('export-bundle').disabled=allRecords.length===0;
+ $('export-csv').disabled=!hasData;
+ $('export-aggregate').disabled=!hasData;
+ if(!hasData)return;
+
+ const summary=V.analyze(rows,cohort,stage,batch,iface,mode);
+ const simCount=rows.filter(r=>r.simulado).length;
+ $('metric-n').textContent=String(rows.length);
+ $('metric-origin').textContent=simCount?`${simCount} simulado(s) · ${rows.length-simCount} de participantes`:`de ${allRecords.length} carregados no painel`;
+ $('metric-mode').textContent=mode==='feira'?'Feira · Lógica':'Completo · 8 áreas';
+ $('metric-domains-count').textContent=mode==='feira'?'1 domínio com gabarito':'5 com gabarito + 3 declarados/indiretos';
+
+ const lmStat=summary.domains.find(d=>d.id==='LM')||summary.domains[0];
+ $('metric-lm-pairs').textContent=String(lmStat?.n||0);
+ $('metric-lm-rho').textContent='Spearman ρ = '+(lmStat?.rho===null||lmStat?.rho===undefined?'—':fmt(lmStat.rho,3));
+
+ const totalAssigned=rows.filter(r=>r.aprendizagem).length;
+ const totalCompleted=rows.filter(r=>r.aprendizagem?.completed).length;
+ $('metric-transfer-done').textContent=String(totalCompleted);
+ $('metric-transfer-assigned').textContent=`de ${totalAssigned} atribuído(s) ao sorteio`;
+
+ const objectiveDomains=summary.domains.filter(d=>!d.observed&&!d.proxy);
+ const indirectDomains=summary.domains.filter(d=>d.observed||d.proxy);
+ $('table-objective').innerHTML=objectiveDomains.map(renderDomainRow).join('');
+ $('indirect-section').hidden=indirectDomains.length===0;
+ if(indirectDomains.length>0){
+  $('table-indirect').innerHTML=indirectDomains.map(renderDomainRow).join('');
+ }
+
+ renderSpearmanAndCalibration(rows,$('detail-domain').value);
+
+ $('matrix-domains-section').hidden=mode!=='completo';
+ if(mode==='completo'){
+  const defs=summary.domains;
+  $('domain-matrix-thead').innerHTML=`<tr><th>Área</th>${defs.map(d=>`<th>${d.id}</th>`).join('')}</tr>`;
+  $('domain-matrix-tbody').innerHTML=defs.map((dRow,i)=>`<tr>
+   <th scope="row">${esc(dRow.label)} (${dRow.id})</th>
+   ${summary.matrix[i].map((cell,j)=>`<td class="${i===j?'v2-diagonal':''}">${cell.rho===null?'—':fmt(cell.rho,2)} <small class="fine">(n=${cell.n})</small></td>`).join('')}
+  </tr>`).join('');
+ }
+
+ // Learning & Permutation section
+ const groupLabels={correcao:'Resposta correta (gabarito)',explicativo:'Explicação da estratégia'};
+ const localGroups=['correcao','explicativo'].map(g=>{
+  const assigned=rows.filter(r=>r.aprendizagem?.group===g);
+  const scores=assigned.map(V.transferScore).filter(x=>x!==null);
+  const avg=scores.length?scores.reduce((a,b)=>a+b,0)/scores.length:null;
+  return {
+   group:g,
+   n:assigned.length,
+   complete:scores.length,
+   missing:assigned.length-scores.length,
+   completion:assigned.length?scores.length/assigned.length*100:null,
+   mean:avg,
+   accuracy:avg===null?null:avg*25,
+   distribution:[0,1,2,3,4].map(k=>scores.filter(x=>x===k).length)
+  };
+ });
+ $('learning-tbody').innerHTML=localGroups.map(g=>`<tr>
+  <th scope="row">${groupLabels[g.group]}</th>
+  <td>${g.n}</td>
+  <td>${g.complete}</td>
+  <td>${g.missing}</td>
+  <td>${g.completion===null?'—':fmt(g.completion,1)+'%'}</td>
+  <td><strong>${g.mean===null?'—':fmt(g.mean,2)+' / 4'}</strong></td>
+  <td>${g.accuracy===null?'—':fmt(g.accuracy,1)+'%'}</td>
+  <td>${g.distribution.map((c,score)=>`${score}:${c}`).join(' · ')}</td>
+ </tr>`).join('');
+
+ const inf=V.feedbackInference(rows,{verifiedServer:false});
+ let permHTML=`<p><strong>Status da inferência experimental:</strong> ${esc(inf.reason)}</p>`;
+ if(inf.test){
+  const t=inf.test;
+  permHTML+=`<p><strong>Resultado do teste bilateral de permutação:</strong> Diferença observada (Explicativo − Resposta correta) = <strong>${(t.effect>0?'+':'')+fmt(t.effect,3)} acerto(s)</strong> (${(t.effect>0?'+':'')+fmt(t.effect*25,1)} p.p.) · Método: <strong>${t.method==='exato'?'Enumeração exata':'Monte Carlo (semente '+t.seed+')'}</strong> · Permutações: ${t.permutations.toLocaleString('pt-BR')} (extremas: ${t.extreme.toLocaleString('pt-BR')}) · <strong>valor-p bilateral = ${fmt(t.p,4)}</strong>${t.mcse!==null?' (MCSE = '+fmt(t.mcse,4)+')':''}.</p>`;
+ }else if(inf.bounds){
+  permHTML+=`<p><strong>Cenários extremos de sensibilidade (bounds para ausentes entre 0 e 4):</strong> Diferença média entre <strong>${fmt(inf.bounds[0],2)}</strong> e <strong>${fmt(inf.bounds[1],2)}</strong> acertos.</p>`;
+ }else if(localGroups[0].complete>0&&localGroups[1].complete>0){
+  const s0=rows.filter(r=>r.aprendizagem?.group==='correcao').map(V.transferScore).filter(x=>x!==null);
+  const s1=rows.filter(r=>r.aprendizagem?.group==='explicativo').map(V.transferScore).filter(x=>x!==null);
+  try{
+   const demoTest=V.permutationTest(s0,s1);
+   permHTML+=`<p class="fine"><strong>Demonstração matemática sobre os arquivos importados (sorteio local):</strong> Diferença observada entre concluintes = ${(demoTest.effect>0?'+':'')+fmt(demoTest.effect,3)} acerto(s) · Método: ${demoTest.method==='exato'?'Exato ('+demoTest.permutations.toLocaleString('pt-BR')+' alocações)':'Monte Carlo (20.000 permutações, semente 20261027)'} · valor-p = ${fmt(demoTest.p,4)}. Conforme a metodologia, na coleta por arquivos esse indicador tem caráter descritivo/demonstrativo.</p>`;
+  }catch{}
+ }
+ $('permutation-box').innerHTML=permHTML;
+
+ // Group Action Plan
+ try{
+  const plan=V.actionPlan(rows,cohort,mode);
+  $('group-plan-grid').innerHTML=plan.map(item=>`<article>
+   <h3>${esc(item.label)} (${item.id})</h3>
+   <p><strong>Prioridade descritiva:</strong> ${item.focus?`${esc(item.focus.id+' · '+item.focus.title)} — ${item.focus.correct}/${item.focus.applied} acertos (${fmt(item.focus.rate*100,1)}%), ${item.focus.missing} ausente(s)`:'Menos de 3 aplicações válidas na área'}</p>
+   <p class="fine">${esc(item.note)}</p>
+   <p><strong>Proposta de prática para a turma:</strong> ${esc(item.practice)}</p>
+  </article>`).join('');
+ }catch(err){
+  $('group-plan-grid').innerHTML=`<p class="fine">${esc(err.message)}</p>`;
+ }
+}
+
+['filter-cohort','filter-mode','filter-stage','filter-origin','filter-interface','filter-transfer','filter-batch'].forEach(id=>{
+ $(id).addEventListener('change',renderDashboard);
+ if(id==='filter-batch')$(id).addEventListener('input',renderDashboard);
+});
+$('detail-domain').addEventListener('change',()=>{
+ const rows=getFilteredRecords();
+ if(rows.length)renderSpearmanAndCalibration(rows,$('detail-domain').value);
+});
+
+$('export-bundle').addEventListener('click',()=>{
+ if(!allRecords.length)return;
+ saveFile(V.bundle(allRecords),'Percepcao_lote_consolidado.json');
+});
+$('export-csv').addEventListener('click',()=>{
+ const rows=getFilteredRecords();
+ if(!rows.length)return;
+ saveFile(V.csv(rows),`Percepcao_planilha_${$('filter-cohort').value}_${$('filter-mode').value}.csv`,'text/csv;charset=utf-8');
+});
+$('export-aggregate').addEventListener('click',()=>{
+ const rows=getFilteredRecords();
+ if(!rows.length)return;
+ const cohort=$('filter-cohort').value,mode=$('filter-mode').value,stage=$('filter-stage').value,iface=$('filter-interface').value,batch=$('filter-batch').value.trim();
+ const summary=V.analyze(rows,cohort,stage,batch,iface,mode);
+ const aggregateReport={
+  schema:'percepcao-agregado-2.3',
+  exportado_em:new Date().toISOString(),
+  aviso:'Apresentação de resultados agregados. Omite identificadores e respostas individuais.',
+  selecao:{publico:cohort,percurso:mode,etapa:stage,interface_versao:iface,lote:batch||null,n_registros:rows.length,simulados:rows.filter(r=>r.simulado).length},
+  dominios_gabarito:summary.domains.filter(d=>!d.observed&&!d.proxy),
+  dominios_declarados_indiretos:summary.domains.filter(d=>d.observed||d.proxy),
+  calibracao_por_dominio:Object.fromEntries(summary.domains.map(d=>[d.id,V.calibrationMatrix(rows,d.id)])),
+  aprendizagem_feedback:summary.learning,
+  plano_grupo:V.actionPlan(rows,cohort,mode)
+ };
+ saveFile(aggregateReport,`Percepcao_agregados_${cohort}_${mode}.json`);
+});
+$('export-dictionary').addEventListener('click',()=>{
+ const cohorts=Object.keys(V.COHORTS);
+ saveFile({
+  schema:V.SCHEMA,version:V.VERSION,aprendizagem_versao:V.TRANSFER_VERSION,interface_versao:V.APP_VERSION,
+  populations:V.COHORTS,percurso:V.MODES,domains:V.DOMAINS,
+  instruments:Object.fromEntries(cohorts.map(c=>[c,{self:V.items(c),tasks:V.tasks(c),transfer:V.tasks(c,true)}])),
+  strategies:V.STRATEGIES,practice:V.PRACTICE
+ },'Percepcao_instrumentos_ampliados.json');
+});
+$('print-report').addEventListener('click',()=>window.print());
+
+loadLocal();
+if(allRecords.length){
+ autoSelectFilters();
+ updateImportStatus(`Sessão restaurada: ${allRecords.length} registro(s) carregado(s) no painel.`);
+}
+renderDashboard();
+})();</script>
+</body></html>
