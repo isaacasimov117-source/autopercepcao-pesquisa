@@ -21,7 +21,7 @@
 <header class="top"><div class="wrap top-inner"><a class="brand" href="index.html">percepção <small>FECITEL-JM · Painel</small></a><nav aria-label="Navegação do painel"><a href="index.html">Aplicação do participante</a><a href="#importar" aria-current="page">Importar e filtrar</a><a href="#analise">Indicadores</a><a href="#spearman-calibracao">Spearman e calibração</a><a href="#aprendizagem-painel">Feedback e permutação</a><a href="#plano-grupo">Plano do grupo</a></nav><button id="font" class="font-button" type="button" aria-label="Aumentar tamanho do texto" aria-pressed="false">A+</button></div></header>
 <main id="page-dados" class="wrap page">
  <div class="section-head compact">
-  <p class="eyebrow">Percepção · Painel analítico local e auditável · Interface 2.3.0</p>
+  <p class="eyebrow">Percepção · Painel analítico local e auditável · Interface 2.4.0</p>
   <h1>Consolidação, diagnóstico e verificação estatística</h1>
   <p class="lead">Importe arquivos JSON individuais ou lotes entregues pelos participantes, confira duplicatas e conflitos e examine correlações de Spearman, matrizes de calibração e o experimento de feedback em lógica mantendo públicos, percursos, etapas e versões separados.</p>
  </div>
@@ -77,7 +77,8 @@
    </label>
    <label for="filter-interface">Versão da interface
     <select id="filter-interface">
-     <option value="2.3.0" selected>2.3.0 (atual)</option>
+     <option value="2.4.0" selected>2.4.0 (atual · corporal autodeclarado)</option>
+     <option value="2.3.0">2.3.0</option>
      <option value="2.2.0">2.2.0</option>
      <option value="anterior">Anterior / sem campo</option>
     </select>
@@ -140,8 +141,8 @@
   </section>
 
   <section id="indirect-section" class="paper v2-indirect" hidden>
-   <h2>4. Domínios baseados em observação declarada ou cenários indiretos</h2>
-   <p>Apresentados separadamente dos domínios com gabarito algorítmico exato: a área corporal-cinestésica depende da declaração de observador presencial sobre quatro critérios; as áreas interpessoal e intrapessoal utilizam julgamento de cenários situacionais.</p>
+   <h2>4. Domínios baseados em critérios declarados ou cenários indiretos</h2>
+   <p>Apresentados separadamente dos domínios com gabarito algorítmico exato: na versão atual, a área corporal-cinestésica utiliza a execução autônoma e o resultado declarado pelo participante; os arquivos anteriores preservam a identificação do observador declarado e são analisados separadamente; as áreas interpessoal e intrapessoal utilizam julgamento de cenários situacionais.</p>
    <div class="table-scroll">
     <table>
      <caption>Indicadores nos domínios declarados (Corporal) e por cenário indireto (Interpessoal e Intrapessoal)</caption>
@@ -250,14 +251,14 @@
  </div>
 </main>
 <footer class="wrap footer">
- <p>Percepção · Painel Analítico · Interface 2.3.0</p>
+ <p>Percepção · Painel Analítico · Interface 2.4.0</p>
  <div class="buttons"><a href="index.html">Ir para aplicação do participante</a><a href="#page-dados">Voltar ao topo</a></div>
 </footer>
 <script>(function(root){
 'use strict';
-const APP_VERSION='2.3.0',VERSION='multidominios-0.1',TRANSFER_VERSION='aprendizagem-0.2',SCHEMA='percepcao-registro-2.0';
+const APP_VERSION='2.4.0',VERSION='multidominios-0.2',LEGACY_VERSION='multidominios-0.1',TRANSFER_VERSION='aprendizagem-0.2',SCHEMA='percepcao-registro-2.0';
 const COHORTS={fundamental:'Fundamental · anos finais · 13+',medio:'Ensino médio',superior:'Ensino superior · cursando ou concluído',adultos:'Adultos · cotidiano e trabalho'};
-const DOMAINS=[['L','Linguística','Leitura e interpretação'],['LM','Lógico-matemática','Regras e resolução de problemas'],['E','Espacial','Orientação e transformações visuais'],['M','Musical','Discriminação de padrões sonoros'],['C','Corporal-cinestésica','Observação de tarefas manuais'],['I','Interpessoal','Julgamento de situações sociais'],['IN','Intrapessoal','Planejamento em cenários e previsão do desempenho'],['N','Naturalista','Classificação e observação de dados naturais']].map(([id,label,measure])=>({id,label,measure,proxy:['I','IN'].includes(id),observed:id==='C'}));
+const DOMAINS=[['L','Linguística','Leitura e interpretação'],['LM','Lógico-matemática','Regras e resolução de problemas'],['E','Espacial','Orientação e transformações visuais'],['M','Musical','Discriminação de padrões sonoros'],['C','Corporal-cinestésica','Execução de tarefas manuais com resultado autodeclarado'],['I','Interpessoal','Julgamento de situações sociais'],['IN','Intrapessoal','Planejamento em cenários e previsão do desempenho'],['N','Naturalista','Classificação e observação de dados naturais']].map(([id,label,measure])=>({id,label,measure,proxy:['I','IN'].includes(id),observed:id==='C'}));
 const ITEMS={L:['Explico uma ideia de modo que outra pessoa compreenda.','Identifico a ideia principal de um texto.','Organizo minhas ideias antes de escrever ou falar.','Percebo diferenças de significado entre expressões parecidas.','Adapto minha explicação à pessoa com quem converso.'],LM:['Reconheço padrões em sequências e problemas.','Divido um problema difícil em etapas menores.','Comparo soluções antes de escolher uma.','Percebo contradições em uma explicação.','Uso quantidades e proporções para resolver problemas.'],E:['Imagino um objeto visto de outro ângulo.','Compreendo mapas e representações visuais.','Percebo posições e distâncias entre objetos.','Imagino o resultado de uma construção antes de fazê-la.','Relaciono um desenho a um objeto tridimensional.'],M:['Percebo diferenças de ritmo entre sons.','Reproduzo um ritmo depois de ouvi-lo.','Percebo quando uma melodia sobe ou desce.','Reconheço uma melodia em uma versão diferente.','Distingo sons de fontes ou instrumentos diferentes.'],C:['Aprendo uma sequência de movimentos ao observá-la.','Coordeno movimentos para executar uma tarefa.','Realizo tarefas manuais com precisão.','Ajusto movimentos quando o resultado não sai como planejei.','Manipulo objetos com controle e coordenação.'],I:['Percebo sinais de mudança na emoção de outra pessoa.','Mudo minha explicação quando alguém não a compreende.','Considero o ponto de vista de outra pessoa.','Percebo quando alguém tem dificuldade para participar.','Coopero com pessoas que pensam de modo diferente.'],IN:['Percebo o que estou sentindo antes de decidir.','Avalio com sinceridade como me saí em uma atividade.','Reconheço facilidades e dificuldades ao aprender.','Estabeleço objetivos que considero possíveis.','Percebo quando preciso mudar minha estratégia de estudo ou trabalho.'],N:['Distingo elementos naturais que parecem semelhantes.','Reconheço padrões em plantas, animais ou outros elementos naturais.','Percebo mudanças no ambiente ao longo do tempo.','Reconheço relações entre elementos de um ambiente.','Classifico elementos naturais por características observáveis.']};
 const STRATEGIES={L:'Separe o que o texto afirma do que você está supondo. Sublinhe a informação que sustenta a resposta.',LM:'Registre cada etapa e confira se a regra permite a conclusão. Use um exemplo contrário para testar uma hipótese.',E:'Marque a posição inicial e faça uma transformação de cada vez. Desenhe a orientação antes e depois.',M:'Ouça um atributo por vez: altura, duração ou padrão. Reproduza as sequências em condições semelhantes.',C:'Observe a sequência antes de começar, divida-a em partes e pratique sentado, com objetos seguros. Adaptações devem ser registradas.',I:'Pergunte o que cada pessoa precisa e confira a compreensão. Uma resposta a um cenário não substitui a interação real.',IN:'Defina uma meta observável, preveja o resultado e confira o que aconteceu. Revise a estratégia com base nas evidências.',N:'Escolha uma característica observável para classificar. Compare dados antes de atribuir uma causa.'};
 const validCohort=c=>Object.hasOwn(COHORTS,c);
@@ -275,7 +276,11 @@ function randomOrder(mode='completo',draw=randomIndex){
  const a=domainIds(mode);for(let i=a.length-1;i>0;i--){const j=draw(i+1);if(!Number.isInteger(j)||j<0||j>i)throw new Error('Sorteio inválido.');[a[i],a[j]]=[a[j],a[i]];}return a;
 }
 function items(c){if(!validCohort(c))throw new Error('Público inválido.');const context={fundamental:'Pense em atividades da escola, de casa e de lazer.',medio:'Pense em aulas, projetos e situações do cotidiano.',superior:'Pense em estudos, projetos acadêmicos e situações do cotidiano.',adultos:'Pense em atividades do cotidiano, de trabalho ou de aprendizagem.'}[c];return DOMAINS.flatMap(d=>ITEMS[d.id].map((text,i)=>({id:d.id+(i+1),domain:d.id,text,context})));}
-function tasks(c,transfer=false,transferVersion=TRANSFER_VERSION){
+function recordTaskVersion(r){return r.tarefas_versao===LEGACY_VERSION+'-'+r.publico?LEGACY_VERSION:VERSION;}
+function recordBodySource(r){return recordMode(r)==='feira'?'fora_percurso':recordTaskVersion(r)===LEGACY_VERSION?'observador':'participante';}
+function primaryTasks(r){return tasks(r.publico,false,TRANSFER_VERSION,recordTaskVersion(r));}
+function tasks(c,transfer=false,transferVersion=TRANSFER_VERSION,primaryVersion=VERSION){
+ if(![VERSION,LEGACY_VERSION].includes(primaryVersion))throw new Error('Versão das tarefas inválida.');
  if(!validCohort(c))throw new Error('Público inválido.');const level=Object.keys(COHORTS).indexOf(c),n=[2,3,5,4][level]+(transfer?1:0),place=['grupo da escola','projeto da turma','grupo de pesquisa','grupo de trabalho'][level],a=10+level*3+(transfer?2:0),b=8+level*2,both=3+level,total=a+b+6;
  const q=(id,domain,title,prompt,options,answer,explanation,extra={})=>({id:(transfer?'P_':'')+id,domain,title,prompt,options,answer,explanation,...extra});
  const logic=[
@@ -284,7 +289,7 @@ function tasks(c,transfer=false,transferVersion=TRANSFER_VERSION){
  q('LM3','LM','Evitar contagem dupla',`Há ${total} pessoas em um ${place}. Dessas, ${a} participam de uma atividade, ${b} de outra e ${both} das duas. Quantas não participam de nenhuma?`,[String(6),String(8+both),String(6+both),String(total-a)],3,`A união é ${a} + ${b} − ${both}. Subtraia a união do total: ficam ${6+both}.`),
  q('LM4','LM','Preservar um contador',`Um contador começa em zero antes da leitura da lista [${n+3}, ${n-1}, ${n+5}, ${n}]. Some 1 para cada número maior que ${n}, sem reiniciar o contador. Qual é o valor final?`,['1','2','3','4'],2,'Somente o primeiro e o terceiro valores são maiores que o limite. O valor igual ao limite não conta.')];
  if(transfer){
-  if(transferVersion===VERSION)return logic;
+  if(transferVersion===LEGACY_VERSION)return logic;
   if(transferVersion!==TRANSFER_VERSION)throw new Error('Versão do complemento inválida.');
   const start=[4,6,7,5][level],mult=level===2?3:2,rounds=level===2?3:2,increment=2;
   let result=start;for(let i=0;i<rounds;i++)result=result*mult+increment;
@@ -349,10 +354,21 @@ function tasks(c,transfer=false,transferVersion=TRANSFER_VERSION){
   adapt(spatial,'E3','Em uma grade 4 × 4, uma marca está na linha 3, coluna 1. As linhas são contadas de cima e as colunas da esquerda. Após reflexão em um espelho vertical, onde fica?',['Linha 2, coluna 1','Linha 3, coluna 2','Linha 2, coluna 4','Linha 3, coluna 4'],'A reflexão vertical mantém a linha 3 e troca a coluna 1 pela 4.');spatial[2].visual='□ □ □ □\n□ □ □ □\n● □ □ □\n□ □ □ □';
   adapt(motor,'C3','Um observador monta quatro cartões formando um quadrado de duas linhas e duas colunas. Após observar, copie com outros quatro cartões. Critério: manter as relações de posição, permitindo deslocar o conjunto na mesa.',['Critério atendido','Critério não atendido'],'Observe a disposição antes de executar. O resultado depende da observação e também envolve organização espacial.');
  }
+ if(primaryVersion===VERSION){
+  const sides=Array.from({length:count},(_,i)=>i%2?'direita':'esquerda').join(' → '),layout=level===2?'■ ■ ■\n□ ■ □':level===3?'■ ■\n■ ■':'■ ■\n■ □',cards=level>=2?4:3;
+  const targets=Array.from({length:count},(_,i)=>i%2===0?count-i/2:(i+1)/2).join(' → ');
+  const options=['Consegui cumprir o critério','Não consegui cumprir o critério'];
+  motor.splice(0,motor.length,
+   q('C1','C','Executar uma sequência',`Sentado, leia a sequência de mãos: ${sides}. Faça um toque na mesa com cada mão indicada, na mesma ordem. Você pode consultar a sequência. Critério: completar os ${count} toques na ordem apresentada.`,options,1,'Realize a sequência antes de responder. O próprio participante declara se cumpriu o critério.',{observed:true,selfReported:true}),
+   q('C2','C','Posicionar objetos',`Sentado, coloque ${count} tampinhas grandes ou cartões dentro de ${count} círculos desenhados, sem ultrapassar as bordas ao soltar. Critério: todas as posições atendidas, sem limite de tempo. Confira o resultado e registre se conseguiu.`,options,1,'Use objetos grandes e seguros. Confira a posição final de cada objeto antes de registrar o resultado.',{observed:true,selfReported:true}),
+   q('C3','C','Montar uma organização',`Sentado, organize ${cards} cartões como os quadrados preenchidos do modelo abaixo. Critério: manter as mesmas relações de posição; o conjunto pode ficar em qualquer parte da mesa. Confira o modelo e registre se conseguiu.`,options,1,'Compare a organização final com o modelo. A atividade também envolve organização espacial.',{observed:true,selfReported:true,visual:layout}),
+   q('C4','C','Ajustar um movimento',`Disponha ${count} cartões numerados de 1 a ${count} em uma linha sobre a mesa. Sentado, toque com um dedo os cartões nesta ordem: ${targets}. Você pode consultar a sequência. Critério: tocar todos os cartões na ordem indicada, sem limite de tempo.`,options,1,'Antecipe o próximo alvo e confira a ordem dos toques. Registre o resultado da execução que acabou de realizar.',{observed:true,selfReported:true})
+  );
+ }
  return [...language,...logic,...spatial,...sound,...motor,...social,...self,...nature];
 }
 function validate(raw){
- if(!raw||raw.schema!==SCHEMA||!validCohort(raw.publico)||raw.instrumento_versao!=='autopercepcao-40-0.3-'+raw.publico||raw.tarefas_versao!==VERSION+'-'+raw.publico)throw new Error('Registro ou versão incompatível com o instrumento ampliado.');
+ if(!raw||raw.schema!==SCHEMA||!validCohort(raw.publico)||raw.instrumento_versao!=='autopercepcao-40-0.3-'+raw.publico||![VERSION,LEGACY_VERSION].some(v=>raw.tarefas_versao===v+'-'+raw.publico))throw new Error('Registro ou versão incompatível com o instrumento ampliado.');
  if(typeof raw.id!=='string'||!/^[A-Za-z0-9][A-Za-z0-9_-]{7,63}$/.test(raw.id))throw new Error('Identificador inválido.');
  if(!['demonstracao','piloto','pesquisa'].includes(raw.etapa)||typeof raw.simulado!=='boolean'||raw.simulado&&raw.etapa!=='demonstracao')throw new Error('Etapa ou origem inválida.');
  if(raw.participacao_aceita!==true||raw.faixa_permitida!==true)throw new Error('Confirme participação e faixa de acesso.');
@@ -360,45 +376,51 @@ function validate(raw){
  const mode=recordMode(raw),active=domainIds(mode),order=raw.ordem_dominios;
  if(raw.percurso!==undefined&&!Object.hasOwn(MODES,raw.percurso))throw new Error('Percurso inválido.');
  if(!Object.hasOwn(MODES,mode)||raw.percurso!==undefined&&(!Array.isArray(order)||order.length!==active.length||new Set(order).size!==active.length||order.some(k=>!active.includes(k)))||raw.percurso===undefined&&order!==undefined||raw.interface_versao===APP_VERSION&&raw.percurso===undefined)throw new Error('Percurso ou ordem das áreas inválidos.');
+ const bodySource=recordBodySource(raw),currentTasks=recordTaskVersion(raw)===VERSION;
+ if(currentTasks&&(raw.interface_versao!==APP_VERSION||raw.registro_corporal!==bodySource||raw.observador!==false))throw new Error('Confira a versão e a origem autodeclarada do registro corporal.');
+ if(!currentTasks&&raw.interface_versao===APP_VERSION)throw new Error('A interface atual utiliza a versão revisada das tarefas.');
  if(mode==='feira'&&raw.observador===true)throw new Error('O percurso de lógica não inclui observação corporal.');
  const respostas={},tarefas={},previsoes={},limitacoes={};
  for(const i of items(raw.publico)){const v=raw.respostas?.[i.id]??null;if(v!==null&&(!Number.isInteger(v)||v<1||v>5))throw new Error('Resposta inválida em '+i.id);if(!active.includes(i.domain)&&v!==null)throw new Error('Resposta fora do percurso.');respostas[i.id]=v;}
- const bank=tasks(raw.publico);for(const t of bank){const v=raw.tarefas?.[t.id]??null;if(v!==null&&(!Number.isInteger(v)||v<0||v>t.options.length))throw new Error('Atividade inválida em '+t.id);if(t.observed&&v!==null&&raw.observador!==true)throw new Error('Atividades corporais exigem observação declarada.');if(!active.includes(t.domain)&&v!==null)throw new Error('Atividade fora do percurso.');tarefas[t.id]=v;}
- for(const d of DOMAINS){const v=raw.previsoes?.[d.id]??null;if(v!==null&&(!Number.isInteger(v)||v<0||v>4))throw new Error('Previsão inválida.');if(!active.includes(d.id)&&v!==null)throw new Error('Previsão fora do percurso.');previsoes[d.id]=v;const reason=raw.limitacoes?.[d.id]??null;if(reason!==null&&!['sem_observador','sem_audio','adaptacao','nao_aplicado','fora_percurso'].includes(reason))throw new Error('Motivo de não aplicação inválido.');if(bank.some(t=>t.domain===d.id&&tarefas[t.id]===null)&&!reason)throw new Error('Informe por que alguma atividade não foi aplicada.');if(!active.includes(d.id)&&reason!=='fora_percurso'||active.includes(d.id)&&reason==='fora_percurso')throw new Error('Motivo incompatível com o percurso.');limitacoes[d.id]=reason;}
+ const bank=primaryTasks(raw);for(const t of bank){const v=raw.tarefas?.[t.id]??null;if(v!==null&&(!Number.isInteger(v)||v<0||v>t.options.length))throw new Error('Atividade inválida em '+t.id);if(!currentTasks&&t.observed&&v!==null&&raw.observador!==true)throw new Error('Atividades corporais exigem observação declarada.');if(!active.includes(t.domain)&&v!==null)throw new Error('Atividade fora do percurso.');tarefas[t.id]=v;}
+ for(const d of DOMAINS){const v=raw.previsoes?.[d.id]??null;if(v!==null&&(!Number.isInteger(v)||v<0||v>4))throw new Error('Previsão inválida.');if(!active.includes(d.id)&&v!==null)throw new Error('Previsão fora do percurso.');previsoes[d.id]=v;const reason=raw.limitacoes?.[d.id]??null;if(currentTasks&&reason==='sem_observador')throw new Error('A execução autônoma dispensa observador.');if(reason!==null&&!['sem_observador','sem_audio','adaptacao','nao_aplicado','fora_percurso'].includes(reason))throw new Error('Motivo de não aplicação inválido.');if(bank.some(t=>t.domain===d.id&&tarefas[t.id]===null)&&!reason)throw new Error('Informe por que alguma atividade não foi aplicada.');if(!active.includes(d.id)&&reason!=='fora_percurso'||active.includes(d.id)&&reason==='fora_percurso')throw new Error('Motivo incompatível com o percurso.');limitacoes[d.id]=reason;}
  if(raw.lote!=null&&(typeof raw.lote!=='string'||!/^[A-Za-z0-9][A-Za-z0-9_-]{0,23}$/.test(raw.lote)))throw new Error('Lote inválido.');
  const procedimentos=Object.fromEntries(['revisao','autorizacao','voluntario','guarda'].map(k=>[k,raw.procedimentos?.[k]===true]));if(raw.etapa!=='demonstracao'&&!Object.values(procedimentos).every(Boolean))throw new Error('Registro de campo sem declaração dos procedimentos.');
- let aprendizagem=null;if(raw.aprendizagem!=null){const a=raw.aprendizagem;if(!['correcao','explicativo'].includes(a.group)||!['servidor','local'].includes(a.assignment)||![VERSION,TRANSFER_VERSION].includes(a.version)||!Array.isArray(a.answers)||a.answers.length!==4||!Array.from(a.answers).every(x=>x===null||Number.isInteger(x)&&x>=0&&x<=4))throw new Error('Aprendizagem inválida.');aprendizagem={version:a.version,group:a.group,assignment:a.assignment,answers:[...a.answers],completed:a.answers.every(x=>x!==null)};}
+ let aprendizagem=null;if(raw.aprendizagem!=null){const a=raw.aprendizagem;if(!['correcao','explicativo'].includes(a.group)||!['servidor','local'].includes(a.assignment)||![LEGACY_VERSION,TRANSFER_VERSION].includes(a.version)||!Array.isArray(a.answers)||a.answers.length!==4||!Array.from(a.answers).every(x=>x===null||Number.isInteger(x)&&x>=0&&x<=4))throw new Error('Aprendizagem inválida.');aprendizagem={version:a.version,group:a.group,assignment:a.assignment,answers:[...a.answers],completed:a.answers.every(x=>x!==null)};}
  const result={schema:SCHEMA,id:raw.id,publico:raw.publico,instrumento_versao:raw.instrumento_versao,tarefas_versao:raw.tarefas_versao,etapa:raw.etapa,simulado:raw.simulado,lote:raw.lote??null,criado_em:typeof raw.criado_em==='string'&&Number.isFinite(Date.parse(raw.criado_em))?raw.criado_em:null,participacao_aceita:true,faixa_permitida:true,observador:raw.observador===true,procedimentos,respostas,tarefas,previsoes,limitacoes,aprendizagem};
+ if(currentTasks)result.registro_corporal=bodySource;
  if(raw.interface_versao!==undefined){if(typeof raw.interface_versao!=='string'||!/^\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(raw.interface_versao))throw new Error('Versão da interface inválida.');result.interface_versao=raw.interface_versao;}if(raw.percurso!==undefined){result.percurso=mode;result.ordem_dominios=[...order];}return result;
 }
-function profile(raw){const r=validate(raw),bank=tasks(r.publico);return DOMAINS.map(d=>{const self=items(r.publico).filter(i=>i.domain===d.id).map(i=>r.respostas[i.id]),attempts=bank.filter(t=>t.domain===d.id),values=attempts.map(t=>r.tarefas[t.id]),complete=values.every(x=>x!==null),correct=complete?attempts.filter(t=>r.tarefas[t.id]===t.answer).length:null,mean=self.every(x=>x!==null)?self.reduce((a,b)=>a+b,0)/5:null;return {...d,included:domainIds(recordMode(r)).includes(d.id),mean,selfAnswered:self.filter(x=>x!==null).length,endorsed:mean===null?null:self.filter(x=>x>=4).length,scalePercent:mean===null?null:(mean-1)*25,correct,answered:values.filter(x=>x!==null).length,performance:correct===null?null:correct*25,prediction:r.previsoes[d.id],predictionPercent:r.previsoes[d.id]===null?null:r.previsoes[d.id]*25,gap:correct===null||r.previsoes[d.id]===null?null:(r.previsoes[d.id]-correct)*25};});}
+function profile(raw){const r=validate(raw),bank=primaryTasks(r);return DOMAINS.map(d=>{const self=items(r.publico).filter(i=>i.domain===d.id).map(i=>r.respostas[i.id]),attempts=bank.filter(t=>t.domain===d.id),values=attempts.map(t=>r.tarefas[t.id]),complete=values.every(x=>x!==null),correct=complete?attempts.filter(t=>r.tarefas[t.id]===t.answer).length:null,mean=self.every(x=>x!==null)?self.reduce((a,b)=>a+b,0)/5:null;return {...d,...(d.id==='C'?{measure:recordBodySource(r)==='observador'?'Observação de tarefas manuais por observador declarado':d.measure,bodySource:recordBodySource(r)}:{}),included:domainIds(recordMode(r)).includes(d.id),mean,selfAnswered:self.filter(x=>x!==null).length,endorsed:mean===null?null:self.filter(x=>x>=4).length,scalePercent:mean===null?null:(mean-1)*25,correct,answered:values.filter(x=>x!==null).length,performance:correct===null?null:correct*25,prediction:r.previsoes[d.id],predictionPercent:r.previsoes[d.id]===null?null:r.previsoes[d.id]*25,gap:correct===null||r.previsoes[d.id]===null?null:(r.previsoes[d.id]-correct)*25};});}
 function transferScore(r){if(!r.aprendizagem?.completed)return null;return tasks(r.publico,true,r.aprendizagem.version).filter((t,i)=>r.aprendizagem.answers[i]===t.answer).length;}
 function rank(a){const ix=a.map((v,i)=>({v,i})).sort((x,y)=>x.v-y.v),out=[];for(let i=0;i<ix.length;){let j=i+1;while(j<ix.length&&ix[j].v===ix[i].v)j++;for(let k=i;k<j;k++)out[ix[k].i]=(i+j+1)/2;i=j;}return out;}
 function rho(x,y){if(x.length<3)return null;const a=rank(x),b=rank(y),mean=v=>v.reduce((p,q)=>p+q,0)/v.length,ma=mean(a),mb=mean(b);let cov=0,va=0,vb=0;for(let i=0;i<a.length;i++){cov+=(a[i]-ma)*(b[i]-mb);va+=(a[i]-ma)**2;vb+=(b[i]-mb)**2;}return va&&vb?Math.max(-1,Math.min(1,cov/Math.sqrt(va*vb))):null;}
 function analyze(records,cohort,stage,batch='',interfaceVersion='',mode='completo'){
- const rows=records.map(validate).filter(r=>r.publico===cohort&&r.etapa===stage&&recordMode(r)===mode&&(!batch||r.lote===batch)&&(!interfaceVersion||recordInterface(r)===interfaceVersion)),profiles=rows.map(profile),defs=DOMAINS.filter(d=>domainIds(mode).includes(d.id)),avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
- return {n:rows.length,mode,domains:defs.map(d=>{const p=profiles.map(x=>x.find(y=>y.id===d.id)),pairs=p.filter(x=>x.mean!==null&&x.correct!==null),cal=p.filter(x=>x.gap!==null);return {...d,n:pairs.length,selfMean:avg(pairs.map(x=>x.mean)),performance:avg(pairs.map(x=>x.performance)),rho:rho(pairs.map(x=>x.mean),pairs.map(x=>x.correct)),calibrationN:cal.length,gapMean:avg(cal.map(x=>x.gap)),absoluteGap:avg(cal.map(x=>Math.abs(x.gap))),missing:rows.length-p.filter(x=>x.correct!==null).length};}),matrix:defs.map(a=>defs.map(b=>{const ps=profiles.map(x=>[x.find(d=>d.id===a.id),x.find(d=>d.id===b.id)]).filter(x=>x[0].correct!==null&&x[1].correct!==null);return {n:ps.length,rho:rho(ps.map(x=>x[0].correct),ps.map(x=>x[1].correct))};})),learning:['correcao','explicativo'].map(group=>{const assigned=rows.filter(r=>r.aprendizagem?.group===group&&(stage==='demonstracao'||r.aprendizagem.assignment==='servidor')),scores=assigned.map(transferScore).filter(x=>x!==null);return {group,n:assigned.length,complete:scores.length,missing:assigned.length-scores.length,mean:avg(scores),completion:assigned.length?scores.length/assigned.length*100:null,accuracy:scores.length?avg(scores)*25:null,distribution:[0,1,2,3,4].map(k=>scores.filter(x=>x===k).length)};})};
+ const rows=records.map(validate).filter(r=>r.publico===cohort&&r.etapa===stage&&recordMode(r)===mode&&(!batch||r.lote===batch)&&(!interfaceVersion||recordInterface(r)===interfaceVersion));
+ if(new Set(rows.map(r=>r.tarefas_versao)).size>1)throw new Error('Separe as versões das tarefas para analisar os registros corporais.');
+ const profiles=rows.map(profile),defs=DOMAINS.filter(d=>domainIds(mode).includes(d.id)),avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+ return {n:rows.length,mode,domains:defs.map(d=>{const p=profiles.map(x=>x.find(y=>y.id===d.id)),pairs=p.filter(x=>x.mean!==null&&x.correct!==null),cal=p.filter(x=>x.gap!==null);return {...d,...(d.id==='C'?{measure:p[0]?.measure||d.measure,bodySource:rows[0]?recordBodySource(rows[0]):'participante'}:{}),n:pairs.length,selfMean:avg(pairs.map(x=>x.mean)),performance:avg(pairs.map(x=>x.performance)),rho:rho(pairs.map(x=>x.mean),pairs.map(x=>x.correct)),calibrationN:cal.length,gapMean:avg(cal.map(x=>x.gap)),absoluteGap:avg(cal.map(x=>Math.abs(x.gap))),missing:rows.length-p.filter(x=>x.correct!==null).length};}),matrix:defs.map(a=>defs.map(b=>{const ps=profiles.map(x=>[x.find(d=>d.id===a.id),x.find(d=>d.id===b.id)]).filter(x=>x[0].correct!==null&&x[1].correct!==null);return {n:ps.length,rho:rho(ps.map(x=>x[0].correct),ps.map(x=>x[1].correct))};})),learning:['correcao','explicativo'].map(group=>{const assigned=rows.filter(r=>r.aprendizagem?.group===group&&(stage==='demonstracao'||r.aprendizagem.assignment==='servidor')),scores=assigned.map(transferScore).filter(x=>x!==null);return {group,n:assigned.length,complete:scores.length,missing:assigned.length-scores.length,mean:avg(scores),completion:assigned.length?scores.length/assigned.length*100:null,accuracy:scores.length?avg(scores)*25:null,distribution:[0,1,2,3,4].map(k=>scores.filter(x=>x===k).length)};})};
 }
 function fingerprint(r){const value=validate(r);delete value.criado_em;delete value.aprendizagem;return JSON.stringify(value);}
 function bundle(records){return {schema:'percepcao-lote-2.0',version:VERSION,exportado_em:new Date().toISOString(),registros:records.map(validate)};}
-function csv(records){const fields=['schema','interface_versao','percurso','ordem_dominios','id','publico','instrumento_versao','tarefas_versao','etapa','lote','simulado','criado_em','observador','revisao','autorizacao','voluntario','guarda',...DOMAINS.flatMap(d=>Array.from({length:5},(_,i)=>d.id+(i+1))),...DOMAINS.flatMap(d=>Array.from({length:4},(_,i)=>'T_'+d.id+(i+1))),...DOMAINS.map(d=>'previsao_'+d.id),...DOMAINS.map(d=>'limite_'+d.id),'feedback','alocacao','aprendizagem_versao','P1','P2','P3','P4'];const cell=v=>{let s=v==null?'':String(v);if(/^[=+@-]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';};return '\uFEFF'+[fields.join(','),...records.map(validate).map(r=>{const row={...r,...r.procedimentos,...r.respostas,...Object.fromEntries(Object.entries(r.tarefas).map(([k,v])=>['T_'+k,v])),...Object.fromEntries(Object.entries(r.previsoes).map(([k,v])=>['previsao_'+k,v])),...Object.fromEntries(Object.entries(r.limitacoes).map(([k,v])=>['limite_'+k,v])),feedback:r.aprendizagem?.group,alocacao:r.aprendizagem?.assignment,aprendizagem_versao:r.aprendizagem?.version,...Object.fromEntries([1,2,3,4].map(i=>['P'+i,r.aprendizagem?.answers[i-1]]))};return fields.map(k=>cell(row[k])).join(',');})].join('\r\n');}
+function csv(records){const fields=['schema','interface_versao','percurso','ordem_dominios','id','publico','instrumento_versao','tarefas_versao','etapa','lote','simulado','criado_em','observador','registro_corporal','revisao','autorizacao','voluntario','guarda',...DOMAINS.flatMap(d=>Array.from({length:5},(_,i)=>d.id+(i+1))),...DOMAINS.flatMap(d=>Array.from({length:4},(_,i)=>'T_'+d.id+(i+1))),...DOMAINS.map(d=>'previsao_'+d.id),...DOMAINS.map(d=>'limite_'+d.id),'feedback','alocacao','aprendizagem_versao','P1','P2','P3','P4'];const cell=v=>{let s=v==null?'':String(v);if(/^[=+@-]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"';};return '\uFEFF'+[fields.join(','),...records.map(validate).map(r=>{const row={...r,registro_corporal:recordBodySource(r),...r.procedimentos,...r.respostas,...Object.fromEntries(Object.entries(r.tarefas).map(([k,v])=>['T_'+k,v])),...Object.fromEntries(Object.entries(r.previsoes).map(([k,v])=>['previsao_'+k,v])),...Object.fromEntries(Object.entries(r.limitacoes).map(([k,v])=>['limite_'+k,v])),feedback:r.aprendizagem?.group,alocacao:r.aprendizagem?.assignment,aprendizagem_versao:r.aprendizagem?.version,...Object.fromEntries([1,2,3,4].map(i=>['P'+i,r.aprendizagem?.answers[i-1]]))};return fields.map(k=>cell(row[k])).join(',');})].join('\r\n');}
 
 const PRACTICE={
  L:'Leia um texto curto. Escreva uma conclusão e indique a frase que a sustenta; depois confira se acrescentou alguma suposição.',
  LM:'Resolva uma nova situação com uma regra semelhante. Anote cada etapa e tente encontrar um exemplo que contrarie sua conclusão.',
  E:'Desenhe uma grade, marque uma posição e preveja um giro ou reflexão. Confira a transformação no papel antes de tentar outra.',
  M:'Produza dois ritmos curtos com palmas ou sons. Compare um atributo por vez e tente reproduzir a sequência; registre as condições de escuta.',
- C:'Com um observador, pratique uma sequência curta sentado e com objetos seguros. Combine o critério antes e registre adaptações e resultado.',
+ C:'Pratique sentado, com objetos seguros e um modelo de sequência. Confira o critério após executar e registre o resultado da própria tentativa.',
  I:'Em dupla, simulem uma instrução ambígua. Uma pessoa explica, a outra diz o que entendeu; confiram juntos onde a mensagem mudou.',
  IN:'Escolha uma pequena meta observável, registre o que espera conseguir e execute. Compare previsão e resultado para decidir o próximo ajuste.',
  N:'Observe folhas, fotos ou sementes. Classifique por um critério explícito, justifique os grupos e teste se outra pessoa reproduz sua classificação.'
 };
 function recordInterface(r){return r.interface_versao||'anterior';}
 function validateDraft(raw,expected){
- if(!raw||raw.schema!=='percepcao-rascunho-2.3'||raw.app_version!==APP_VERSION||raw.origin!==expected.origin||raw.code!==expected.code)throw new Error('Este rascunho pertence a outro link, aparelho de acesso ou versão.');
+ if(!raw||raw.schema!=='percepcao-rascunho-2.4'||raw.app_version!==APP_VERSION||raw.origin!==expected.origin||raw.code!==expected.code)throw new Error('Este rascunho pertence a outro link, aparelho de acesso ou versão.');
  const r=validate(raw.record),p=raw.progress;
  if(r.interface_versao!==APP_VERSION||r.aprendizagem!==null||!p||typeof p!=='object'||Array.isArray(p)||!['self','tasks'].includes(p.phase)||!Number.isInteger(p.index)||p.index<0||p.index>=recordOrder(r).length||typeof p.opened!=='boolean'||![0,1].includes(p.taskPage)||p.phase==='self'&&(p.opened||p.taskPage!==0)||!p.opened&&p.taskPage!==0)throw new Error('Progresso do rascunho inválido.');
- const bank=tasks(r.publico),currentDomain=recordOrder(r)[p.index];
+ const bank=primaryTasks(r),currentDomain=recordOrder(r)[p.index];
  if(p.phase==='self'&&(Object.values(r.tarefas).some(v=>v!==null)||Object.values(r.previsoes).some(v=>v!==null)||r.observador))throw new Error('Atividades em rascunho de autopercepção.');
  if(p.phase==='tasks'&&bank.some(t=>(recordOrder(r).indexOf(t.domain)>p.index||t.domain===currentDomain&&!p.opened)&&r.tarefas[t.id]!==null))throw new Error('Respostas fora do progresso registrado.');
  if(typeof raw.updated_at!=='string'||!Number.isFinite(Date.parse(raw.updated_at)))throw new Error('Data do rascunho inválida.');
@@ -408,7 +430,7 @@ function actionPlan(records,cohort,mode='completo'){
  if(!validCohort(cohort))throw new Error('Público inválido.');
  const rows=records.map(validate);
  if(rows.some(r=>r.publico!==cohort)||new Set(rows.map(r=>r.etapa+'|'+r.tarefas_versao+'|'+r.instrumento_versao+'|'+recordInterface(r)+'|'+recordMode(r))).size>1)throw new Error('Separe públicos, etapas e versões para propor atividades.');
- const bank=tasks(cohort);
+ const bank=rows.length?primaryTasks(rows[0]):tasks(cohort);
  return DOMAINS.filter(d=>domainIds(rows.length?recordMode(rows[0]):mode).includes(d.id)).map(d=>{
   const stats=bank.filter(t=>t.domain===d.id).map(t=>{const applied=rows.filter(r=>r.tarefas[t.id]!==null),correct=applied.filter(r=>r.tarefas[t.id]===t.answer).length;return {id:t.id,title:t.title,applied:applied.length,correct,missing:rows.length-applied.length,rate:applied.length?correct/applied.length:null};});
   const eligible=stats.filter(t=>t.applied>=3).sort((a,b)=>a.rate-b.rate||a.id.localeCompare(b.id)),focus=eligible[0]||null;
@@ -463,7 +485,7 @@ function feedbackInference(records,{verifiedServer=false}={}){
  return {...result,status:'calculado',reason:simulation?'Demonstração matemática. Este p-valor não é resultado de pesquisa.':'Teste bilateral de permutação sob a hipótese de efeito individual nulo do feedback; estatística: diferença de médias nas situações novas.',test:permutationTest(groups[0].scores,groups[1].scores)};
 }
 
-const api={MODES,recordMode,recordOrder,domainIds,randomOrder,rank,spearmanDetail,calibrationMatrix,permutationTest,feedbackInference,APP_VERSION,PRACTICE,recordInterface,validateDraft,actionPlan,VERSION,TRANSFER_VERSION,SCHEMA,COHORTS,DOMAINS,ITEMS,STRATEGIES,items,tasks,validate,profile,analyze,rho,transferScore,fingerprint,bundle,csv};root.ResearchV2=Object.freeze(api);if(typeof module!=='undefined'&&module.exports)module.exports=api;
+const api={LEGACY_VERSION,recordTaskVersion,recordBodySource,primaryTasks,MODES,recordMode,recordOrder,domainIds,randomOrder,rank,spearmanDetail,calibrationMatrix,permutationTest,feedbackInference,APP_VERSION,PRACTICE,recordInterface,validateDraft,actionPlan,VERSION,TRANSFER_VERSION,SCHEMA,COHORTS,DOMAINS,ITEMS,STRATEGIES,items,tasks,validate,profile,analyze,rho,transferScore,fingerprint,bundle,csv};root.ResearchV2=Object.freeze(api);if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(globalThis);
 </script>
 <script>(function(){
@@ -576,7 +598,7 @@ function generateSimulatedDataset(){
    const base=Math.round(2+ability*2.5+(rand()-0.5)*1.4);
    return [item.id,Math.min(5,Math.max(1,base))];
   }));
-  const observador=mode==='completo';
+  const observador=false;
   const tarefas=Object.fromEntries(bank.map(t=>{
    if(!active.includes(t.domain))return [t.id,null];
    const pass=rand()<(0.35+ability*0.55);
@@ -598,7 +620,7 @@ function generateSimulatedDataset(){
   });
   simRecords.push({
    schema:V.SCHEMA,
-   id:'sim-'+cohort+'-'+mode+'-'+String(i+1).padStart(3,'0'),
+   id:'sim24-'+cohort+'-'+mode+'-'+String(i+1).padStart(3,'0'),
    publico:cohort,
    instrumento_versao:'autopercepcao-40-0.3-'+cohort,
    tarefas_versao:V.VERSION+'-'+cohort,
@@ -612,6 +634,7 @@ function generateSimulatedDataset(){
    participacao_aceita:true,
    faixa_permitida:true,
    observador,
+   registro_corporal:mode==='completo'?'participante':'fora_percurso',
    procedimentos:{revisao:false,autorizacao:false,voluntario:false,guarda:false},
    respostas,
    tarefas,
@@ -680,7 +703,7 @@ function populateDetailDomains(mode){
 function renderDomainRow(d){
  const ecText=d.gapMean===null?'—':(d.gapMean>0?'+':'')+fmt(d.gapMean,1)+' p.p.';
  const eamText=d.absoluteGap===null?'—':fmt(d.absoluteGap,1)+' p.p.';
- const tag=d.observed?'Observação declarada':d.proxy?'Cenário indireto':'Gabarito objetivo';
+ const tag=d.observed?(d.bodySource==='observador'?'Observador declarado · versão anterior':'Resultado autodeclarado pelo participante'):d.proxy?'Cenário indireto':'Gabarito objetivo';
  return `<tr>
   <th scope="row">${esc(d.label)} (${d.id})<small class="fine">${esc(d.measure)} · ${tag}</small></th>
   <td><strong>${d.n}</strong> pares<small class="fine">${d.missing} sem total</small></td>
@@ -848,10 +871,10 @@ $('export-aggregate').addEventListener('click',()=>{
  const cohort=$('filter-cohort').value,mode=$('filter-mode').value,stage=$('filter-stage').value,iface=$('filter-interface').value,batch=$('filter-batch').value.trim();
  const summary=V.analyze(rows,cohort,stage,batch,iface,mode);
  const aggregateReport={
-  schema:'percepcao-agregado-2.3',
+  schema:'percepcao-agregado-2.4',
   exportado_em:new Date().toISOString(),
   aviso:'Apresentação de resultados agregados. Omite identificadores e respostas individuais.',
-  selecao:{publico:cohort,percurso:mode,etapa:stage,interface_versao:iface,lote:batch||null,n_registros:rows.length,simulados:rows.filter(r=>r.simulado).length},
+  selecao:{publico:cohort,percurso:mode,etapa:stage,interface_versao:iface,lote:batch||null,n_registros:rows.length,tarefas_versao:rows[0].tarefas_versao,registro_corporal:V.recordBodySource(rows[0]),simulados:rows.filter(r=>r.simulado).length},
   dominios_gabarito:summary.domains.filter(d=>!d.observed&&!d.proxy),
   dominios_declarados_indiretos:summary.domains.filter(d=>d.observed||d.proxy),
   calibracao_por_dominio:Object.fromEntries(summary.domains.map(d=>[d.id,V.calibrationMatrix(rows,d.id)])),
